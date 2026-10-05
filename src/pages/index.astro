@@ -20,8 +20,7 @@ const districts=[
 {name:'기장군',slug:'gijang-gun',locals:'정관읍 · 기장읍',type:'가정·상가 정리'}
 ];
 
-const homeUrl=new URL('/',Astro.url.origin).href;
-const websiteJson={'@context':'https://schema.org','@type':'WebSite',name:'올바른수거',url:homeUrl,inLanguage:'ko-KR'};
+const websiteJson={'@context':'https://schema.org','@type':'WebSite',name:'올바른수거',inLanguage:'ko-KR'};
 const homeFaqJson={'@context':'https://schema.org','@type':'FAQPage',mainEntity:[
 {'@type':'Question',name:'수거 비용은 어떻게 정해지나요?',acceptedAnswer:{'@type':'Answer',text:'품목 종류와 수량·부피, 층수와 엘리베이터, 차량 접근 등 현장 조건을 확인한 뒤 상담합니다.'}},
 {'@type':'Question',name:'사진으로 먼저 상담할 수 있나요?',acceptedAnswer:{'@type':'Answer',text:'네. 전체 물량과 큰 물품이 잘 보이는 사진에 수량과 건물 조건을 함께 알려주시면 확인에 도움이 됩니다.'}},
