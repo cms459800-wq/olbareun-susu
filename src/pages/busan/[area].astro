@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+export function getStaticPaths(){
 const areaData={
 '중구':{slug:'jung-gu',focus:'상가·사무실·생활 폐기물',places:['남포동','광복동','중앙동','부평동']},
 '서구':{slug:'seo-gu',focus:'가정·이사·가구 수거',places:['동대신동','서대신동','암남동','충무동']},
@@ -18,7 +19,8 @@ const areaData={
 '사상구':{slug:'sasang-gu',focus:'공장·사업장·창고 폐기물',places:['괘법동','감전동','주례동','모라동']},
 '기장군':{slug:'gijang-gun',focus:'가정·상가·사업장 수거',places:['기장읍','정관읍','일광읍','장안읍']}
 };
-export function getStaticPaths(){return Object.entries(areaData).map(([area,data])=>({params:{area:data.slug},props:{area,data}}))}
+return Object.entries(areaData).map(([area,data])=>({params:{area:data.slug},props:{area,data}}));
+}
 const {area,data}=Astro.props;
 const keywords=[area+' 폐기물수거',area+' 가구수거',area+' 사무실폐기물수거',area+' 상가폐기물수거',area+' 폐업정리',area+' 대량폐기물수거'];
 ---
