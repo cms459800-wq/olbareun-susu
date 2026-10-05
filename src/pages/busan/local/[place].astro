@@ -134,7 +134,7 @@ mora:{title:'모라동 폐기물수거 | 가정·사업장·창고 정리',lead:
 jangan:{title:'장안읍 폐기물수거 | 가정·상가·사업장 정리',lead:'장안읍 가정의 가구와 상가 집기, 사업장 불용품을 현장 유형과 전체 물량에 맞춰 상담합니다.',point:'현장 종류에 따라 필요한 정보가 달라 건물 유형과 물품 전체 사진을 먼저 알려주세요.'},
 gijang:{title:'기장읍 폐기물수거 | 가정·상가·사업장 정리',lead:'기장읍의 가정 가구부터 상가 집기와 사업장 불용품까지 현장 성격과 수량에 따라 상담합니다.',point:'지역 내 현장 유형이 다양하므로 건물 종류와 물품 전체 사진을 함께 알려주세요.'}
 };
-const profile=profiles[data.slug] ?? {title:data.name+' 폐기물수거 | 부산 올바른수거',lead:'버리기 어려운 물품의 전체 모습과 수량을 사진으로 보내주시면 상담이 빠릅니다.',point:'사진과 현장 조건을 함께 알려주시면 보다 정확하게 상담할 수 있습니다.'};
+const profile=profiles[data.slug];
 const intentLabel=faqType==='commercial'?'상가·매장 집기 정리':faqType==='business'?'사업장·창고 대량 정리':'가구·이사 정리';
 const metaDescription=`${data.name} 폐기물수거 ${intentLabel} 상담. ${profile.lead}`;
 const localInsights={
@@ -276,7 +276,7 @@ business:[['사업장 물량이 많아도 상담할 수 있나요?','전체 물�
 const commercialSlugs=['seomyeon','jeonpo','gwangan','millak','nampo','bupyeong','beomil','deokcheon','oncheon'];
 const businessSlugs=['yeonsan','gamjeon','choryang','jangnim','noksan','gwaebeop'];
 const faqType=businessSlugs.includes(data.slug)?'business':commercialSlugs.includes(data.slug)?'commercial':'home';
-const pageScenarios=scenarios[data.slug] ?? data.items.map(i=>i+' 상담');
+const pageScenarios=scenarios[data.slug];
 const pageFaq=faqProfiles[faqType];
 const ctaProfiles={
 commercial:{badge:'상가·매장 정리 상담',title:'정리할 집기를 사진으로 먼저 확인하세요',button:'상가·집기 사진상담',tip:'매장 전체와 정리할 집기가 함께 보이도록 촬영하면 빠릅니다.'},
@@ -339,7 +339,7 @@ const faqJson={'@context':'https://schema.org','@type':'FAQPage',mainEntity:[
 <section class="place-hero"><div><p>{data.district} · {data.name}</p><h1>{data.name} 폐기물수거</h1><p class="hero-focus">{data.focus}</p><p>{profile.lead}</p><div class="actions"><a class="primary" href="#place-contact">{cta.button}</a><a class="secondary" href="tel:01066484886">전화 상담</a></div></div><div class="image-placeholder area-main-image"><strong>{data.name} 수거 이미지</strong><span>추후 현장 WebP 이미지 교체</span></div></section>
 <section class="section"><div class="section-head"><div><h2>{data.name}에서 이런 물품을 상담합니다</h2><p>{contentGuide.sectionGuide}</p></div></div><div class="keyword-grid">{data.items.map(item=><article><span>✓</span><strong>{data.name} {item} 수거</strong><p>{contentGuide.itemGuide}</p></article>)}</div></section>
 <section class="section local-places"><p class="local-point">✓ {profile.point}</p><h2>{data.name} 수거 전 확인하면 좋은 정보</h2><div class="check-grid"><span>① 수거할 물품 사진</span><span>② 대략적인 수량</span><span>③ 건물 층수·엘리베이터</span><span>④ 차량 진입·주차 가능 여부</span></div></section>
-<section class="section local-insight"><p class="eyebrow-local">LOCAL CHECK · {data.name}</p><h2>{localInsight[0]}</h2><p>{localInsight[1]}</p><div class="local-insight-note"><strong>{data.name} 상담 준비</strong><span>{profile.point}</span></div></section>\n<section class="section"><div class="section-head"><div><h2>{data.name}에서 자주 상담하는 정리 상황</h2><p>아래 내용은 실제 완료 사례가 아닌, {data.name}에서 상담할 수 있는 대표적인 상황 안내입니다.</p></div></div><div class="cases">{pageScenarios.map((scenario,i)=><article><div class="image-placeholder case-img"><span>{data.name} 상담 이미지 {i+1}</span></div><h3>{scenario}</h3><p>{contentGuide.scenarioGuide}</p></article>)}</div></section>
+<section class="section local-insight"><p class="eyebrow-local">LOCAL CHECK · {data.name}</p><h2>{localInsight[0]}</h2><p>{localInsight[1]}</p><div class="local-insight-note"><strong>{data.name} 상담 준비</strong><span>{profile.point}</span></div></section>\n<section class="section"><div class="section-head"><div><h2>{data.name}에서 자주 상담하는 정리 상황</h2><p>아래 내용은 실제 완료 사례가 아닌, {data.name}에서 상담할 수 있는 대표적인 상황 안내입니다.</p></div></div><div class="cases">{pageScenarios.map((scenario,i)=><article><div class="image-placeholder case-img"><span>{data.name} 상담 이미지 {i+1}</span></div><h3>{data.name} · {scenario}</h3><p>{data.name} {data.district}에서 {contentGuide.scenarioGuide}</p></article>)}</div></section>
 <section class="section faq"><h2>{data.name} 폐기물수거 FAQ</h2>{pageFaq.map(([q,a])=><details><summary>{q}<span>＋</span></summary><p>{a}</p></details>)}<details><summary>사진 상담 시 무엇을 보내면 좋나요?<span>＋</span></summary><p>{profile.point}</p></details></section>
 <section class="section nearby-section"><div class="section-head"><div><p class="eyebrow-local">NEARBY · {data.district}</p><h2>{data.name} 주변 지역 수거 안내</h2><p>같은 {data.district}의 다른 지역 수거 정보도 함께 확인해 보세요.</p></div></div><div class="nearby-grid">{related.map(([name,slug])=><a href={'/busan/local/'+slug}><span>{data.district}</span><strong>{name} 폐기물수거</strong><em>지역 안내 보기 →</em></a>)}</div></section>
 <section id="place-contact" class="contact local-contact"><span class="contact-badge">{data.name} · {cta.badge}</span><p>{data.name} 폐기물수거가 필요하신가요?</p><h2>{cta.title}</h2><small>{cta.tip}</small><div class="actions"><span class="primary pending-contact" aria-disabled="true">카카오톡 링크 준비중</span><a class="secondary" href="tel:01066484886">☎ 010-6648-4886</a></div></section>
