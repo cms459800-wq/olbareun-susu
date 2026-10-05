@@ -135,8 +135,6 @@ jangan:{title:'장안읍 폐기물수거 | 가정·상가·사업장 정리',lea
 gijang:{title:'기장읍 폐기물수거 | 가정·상가·사업장 정리',lead:'기장읍의 가정 가구부터 상가 집기와 사업장 불용품까지 현장 성격과 수량에 따라 상담합니다.',point:'지역 내 현장 유형이 다양하므로 건물 종류와 물품 전체 사진을 함께 알려주세요.'}
 };
 const profile=profiles[data.slug];
-const intentLabel=faqType==='commercial'?'상가·매장 집기 정리':faqType==='business'?'사업장·창고 대량 정리':'가구·이사 정리';
-const metaDescription=`${data.name} 폐기물수거 ${intentLabel} 상담. ${profile.lead}`;
 const localInsights={
 seomyeon:['상가·업무시설 중심 확인','매장 폐업이나 사무실 이전처럼 집기가 한꺼번에 나오는 상황을 중심으로 물량과 작업시간을 확인합니다.'],
 jeonpo:['카페·소형상가 중심 확인','테이블·의자·진열가구처럼 여러 종류의 매장 집기가 섞이기 쉬워 전체 매장 사진이 도움이 됩니다.'],
@@ -276,6 +274,8 @@ business:[['사업장 물량이 많아도 상담할 수 있나요?','전체 물�
 const commercialSlugs=['seomyeon','jeonpo','gwangan','millak','nampo','bupyeong','beomil','deokcheon','oncheon'];
 const businessSlugs=['yeonsan','gamjeon','choryang','jangnim','noksan','gwaebeop'];
 const faqType=businessSlugs.includes(data.slug)?'business':commercialSlugs.includes(data.slug)?'commercial':'home';
+const intentLabel=faqType==='commercial'?'상가·매장 집기 정리':faqType==='business'?'사업장·창고 대량 정리':'가구·이사 정리';
+const metaDescription=`${data.name} 폐기물수거 ${intentLabel} 상담. ${profile.lead}`;
 const pageScenarios=scenarios[data.slug];
 const pageFaq=faqProfiles[faqType];
 const ctaProfiles={
