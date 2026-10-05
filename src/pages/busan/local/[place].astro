@@ -1,0 +1,30 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+export function getStaticPaths(){
+const pages=[
+{slug:'seomyeon',name:'서면',district:'부산진구',focus:'상가·사무실·폐업 정리',items:['상가 집기','사무실 책상·의자','폐업 잔여물']},
+{slug:'jeonpo',name:'전포동',district:'부산진구',focus:'카페·상가·소형 사무실 정리',items:['카페 집기','매장 가구','사무집기']},
+{slug:'udong',name:'우동',district:'해운대구',focus:'아파트·센텀 사무실·상가 정리',items:['가정 가구','사무실 집기','상가 불용품']},
+{slug:'jwadong',name:'좌동',district:'해운대구',focus:'아파트 이사·가구·가전 정리',items:['대형 가구','생활 가전','이사 잔여물']},
+{slug:'gwangan',name:'광안동',district:'수영구',focus:'상가·주거지 가구·이사 정리',items:['상가 집기','가정 가구','이사 잔여물']},
+{slug:'millak',name:'민락동',district:'수영구',focus:'상가·음식점·가정 불용품 정리',items:['매장 집기','주방 집기','가정 폐기물']},
+{slug:'yeonsan',name:'연산동',district:'연제구',focus:'사무실·상가·가정 정리',items:['사무집기','상가 집기','가구·가전']},
+{slug:'myeongji',name:'명지동',district:'강서구',focus:'아파트 이사·가구·가전 정리',items:['가정 가구','가전제품','이사 잔여물']},
+{slug:'hwamyeong',name:'화명동',district:'북구',focus:'아파트 가구·가전·이사 정리',items:['대형 가구','생활 가전','이사 폐기물']},
+{slug:'sajik',name:'사직동',district:'동래구',focus:'가정·이사·상가 집기 정리',items:['가정 가구','이사 잔여물','상가 집기']}
+];
+return pages.map(data=>({params:{place:data.slug},props:{data}}));
+}
+const {data}=Astro.props;
+---
+<Layout title={data.name+' 폐기물수거 | 부산 올바른수거'} description={data.district+' '+data.name+' 폐기물수거 및 '+data.focus+' 상담. 사진으로 간편하게 수거 가능 여부를 확인하세요.'}>
+<header class="local-header"><a class="brand" href="/"><span class="logo">🚚</span><span><b>올바른수거</b><small>부산 폐기물·불용품 수거 전문</small></span></a><a href="/" class="back">← 부산지역 보기</a><a class="header-call" href="tel:01066484886">☎ 010-6648-4886</a></header>
+<main>
+<section class="place-hero"><div><p>{data.district} · {data.name}</p><h1>{data.name} 폐기물수거</h1><h2>{data.focus}</h2><p>버리기 어려운 물품의 전체 모습과 수량을 사진으로 보내주시면 상담이 빠릅니다.</p><div class="actions"><a class="primary" href="#place-contact">사진으로 수거 문의</a><a class="secondary" href="tel:01066484886">전화 상담</a></div></div><div class="image-placeholder area-main-image"><strong>{data.name} 수거 이미지</strong><span>추후 현장 WebP 이미지 교체</span></div></section>
+<section class="section"><div class="section-head"><div><h2>{data.name}에서 이런 물품을 상담합니다</h2><p>현장 유형에 따라 수거 가능 여부와 작업 방법을 확인합니다.</p></div></div><div class="keyword-grid">{data.items.map(item=><article><span>✓</span><strong>{data.name} {item} 수거</strong><p>사진, 수량, 층수와 이동 여건을 알려주시면 상담에 도움이 됩니다.</p></article>)}</div></section>
+<section class="section local-places"><h2>{data.name} 수거 전 확인하면 좋은 정보</h2><div class="check-grid"><span>① 수거할 물품 사진</span><span>② 대략적인 수량</span><span>③ 건물 층수·엘리베이터</span><span>④ 차량 진입·주차 가능 여부</span></div></section>
+<section class="section"><div class="section-head"><div><h2>{data.name} 현장 사례</h2><p>실제 작업 이미지와 내용으로 순차 교체할 영역입니다.</p></div></div><div class="cases">{[1,2,3,4].map(i=><article><div class="image-placeholder case-img"><span>{data.name} 사례 이미지 {i}</span></div><h3>{data.name} 수거 사례 {i}</h3><p>현장 사진 제작 후 품목과 작업 내용을 개별적으로 구성합니다.</p></article>)}</div></section>
+<section class="section faq"><h2>{data.name} 폐기물수거 FAQ</h2><details><summary>사진만으로 먼저 상담할 수 있나요?<span>＋</span></summary><p>네. 물품 전체와 주변 이동 공간이 보이는 사진을 보내주시면 보다 빠르게 확인할 수 있습니다.</p></details><details><summary>상가나 사무실 물품도 가능한가요?<span>＋</span></summary><p>집기 종류와 수량을 확인해 현장 상황에 맞게 상담합니다.</p></details></section>
+<section id="place-contact" class="contact"><p>{data.name} 폐기물수거가 필요하신가요?</p><h2>사진으로 간편하게 수거 상담을 시작하세요.</h2><div class="actions"><a class="primary" href="#">카카오톡 사진 문의</a><a class="secondary" href="tel:01066484886">☎ 010-6648-4886</a></div></section>
+</main><footer><b>올바른수거</b><p>{data.district} {data.name} 폐기물·불용품 수거 상담</p></footer><div class="mobile-bar"><a href="tel:01066484886">☎ 전화문의</a><a href="#place-contact">● 카톡문의</a></div>
+</Layout>
