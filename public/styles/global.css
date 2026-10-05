@@ -53,3 +53,23 @@
 .district-insight-links span{line-height:1.6;color:#fff}
 .pending-contact{cursor:default;opacity:.72}
 @media(max-width:700px){.district-insight{padding:24px 20px;border-radius:18px}.district-insight h2{font-size:22px}.district-insight-links{display:block}.district-insight-links strong{display:block;margin-bottom:7px}}
+
+/* Mobile usability safeguards */
+html,body{max-width:100%;overflow-x:hidden}
+a,button{-webkit-tap-highlight-color:transparent}
+@media(max-width:800px){
+  body{padding-bottom:64px}
+  .menu,.menu-close{width:46px;height:46px;min-width:46px;min-height:46px}
+  .menu:before{left:12px}
+  .mobile-bar{height:64px;padding-bottom:env(safe-area-inset-bottom);box-sizing:content-box}
+  .mobile-bar a{min-height:64px;font-size:15px}
+  .area-card{min-height:84px}
+  .area-card strong{font-size:14px;line-height:1.35;padding:0 6px}
+  .place-link{font-size:13px;line-height:1.4;min-height:44px;display:inline-flex;align-items:center}
+  .actions a,.actions .primary,.actions .secondary{min-height:46px;display:inline-flex;align-items:center;justify-content:center}
+  .section{min-width:0}
+}
+@media(max-width:380px){
+  .area-grid{gap:7px}
+  .area-card strong{font-size:13px}
+}
