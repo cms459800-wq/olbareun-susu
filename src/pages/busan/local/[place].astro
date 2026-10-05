@@ -105,6 +105,12 @@ const businessSlugs=['yeonsan','gamjeon','choryang','jangnim','noksan','gwaebeop
 const faqType=businessSlugs.includes(data.slug)?'business':commercialSlugs.includes(data.slug)?'commercial':'home';
 const pageScenarios=scenarios[data.slug] ?? data.items.map(i=>i+' 상담');
 const pageFaq=faqProfiles[faqType];
+const ctaProfiles={
+commercial:{badge:'상가·매장 정리 상담',title:'정리할 집기를 사진으로 먼저 확인하세요',button:'상가·집기 사진상담',tip:'매장 전체와 정리할 집기가 함께 보이도록 촬영하면 빠릅니다.'},
+home:{badge:'가구·이사 정리 상담',title:'버릴 가구와 가전을 사진으로 보내주세요',button:'가구·이사 사진상담',tip:'대형 물품 전체 모습과 이동 통로를 함께 촬영하면 좋습니다.'},
+business:{badge:'사업장·대량 정리 상담',title:'사업장 전체 물량부터 간편하게 확인하세요',button:'사업장 대량수거 상담',tip:'전체 물량과 차량 진입·상차 공간을 함께 촬영하면 좋습니다.'}
+};
+const cta=ctaProfiles[faqType];
 const relatedGroups={
 '중구':[['남포동','nampo'],['부평동','bupyeong']],
 '동구':[['초량동','choryang'],['범일동','beomil']],
@@ -127,12 +133,12 @@ const related=(relatedGroups[data.district]??[]).filter(([,slug])=>slug!==data.s
 <Layout title={profile.title} description={profile.lead}>
 <header class="local-header"><a class="brand" href="/"><span class="logo">🚚</span><span><b>올바른수거</b><small>부산 폐기물·불용품 수거 전문</small></span></a><nav class="breadcrumb" aria-label="현재 위치"><a href="/">부산</a><span>›</span><span>{data.district}</span><span>›</span><strong>{data.name}</strong></nav><a class="header-call" href="tel:01066484886">☎ 010-6648-4886</a></header>
 <main>
-<section class="place-hero"><div><p>{data.district} · {data.name}</p><h1>{data.name} 폐기물수거</h1><h2>{data.focus}</h2><p>{profile.lead}</p><div class="actions"><a class="primary" href="#place-contact">사진으로 수거 문의</a><a class="secondary" href="tel:01066484886">전화 상담</a></div></div><div class="image-placeholder area-main-image"><strong>{data.name} 수거 이미지</strong><span>추후 현장 WebP 이미지 교체</span></div></section>
+<section class="place-hero"><div><p>{data.district} · {data.name}</p><h1>{data.name} 폐기물수거</h1><h2>{data.focus}</h2><p>{profile.lead}</p><div class="actions"><a class="primary" href="#place-contact">{cta.button}</a><a class="secondary" href="tel:01066484886">전화 상담</a></div></div><div class="image-placeholder area-main-image"><strong>{data.name} 수거 이미지</strong><span>추후 현장 WebP 이미지 교체</span></div></section>
 <section class="section"><div class="section-head"><div><h2>{data.name}에서 이런 물품을 상담합니다</h2><p>현장 유형에 따라 수거 가능 여부와 작업 방법을 확인합니다.</p></div></div><div class="keyword-grid">{data.items.map(item=><article><span>✓</span><strong>{data.name} {item} 수거</strong><p>사진, 수량, 층수와 이동 여건을 알려주시면 상담에 도움이 됩니다.</p></article>)}</div></section>
 <section class="section local-places"><p class="local-point">✓ {profile.point}</p><h2>{data.name} 수거 전 확인하면 좋은 정보</h2><div class="check-grid"><span>① 수거할 물품 사진</span><span>② 대략적인 수량</span><span>③ 건물 층수·엘리베이터</span><span>④ 차량 진입·주차 가능 여부</span></div></section>
 <section class="section"><div class="section-head"><div><h2>{data.name}에서 자주 상담하는 정리 상황</h2><p>아래 내용은 실제 완료 사례가 아닌, {data.name}에서 상담할 수 있는 대표적인 상황 안내입니다.</p></div></div><div class="cases">{pageScenarios.map((scenario,i)=><article><div class="image-placeholder case-img"><span>{data.name} 상담 이미지 {i+1}</span></div><h3>{scenario}</h3><p>{data.focus}이 필요한 현장은 물품 사진과 수량, 이동 여건을 함께 알려주시면 확인이 빠릅니다.</p></article>)}</div></section>
 <section class="section faq"><h2>{data.name} 폐기물수거 FAQ</h2>{pageFaq.map(([q,a])=><details><summary>{q}<span>＋</span></summary><p>{a}</p></details>)}<details><summary>사진 상담 시 무엇을 보내면 좋나요?<span>＋</span></summary><p>{profile.point}</p></details></section>
 <section class="section nearby-section"><div class="section-head"><div><p class="eyebrow-local">NEARBY · {data.district}</p><h2>{data.name} 주변 지역 수거 안내</h2><p>같은 {data.district}의 다른 지역 수거 정보도 함께 확인해 보세요.</p></div></div><div class="nearby-grid">{related.map(([name,slug])=><a href={'/busan/local/'+slug}><span>{data.district}</span><strong>{name} 폐기물수거</strong><em>지역 안내 보기 →</em></a>)}</div></section>
-<section id="place-contact" class="contact"><p>{data.name} 폐기물수거가 필요하신가요?</p><h2>사진으로 간편하게 수거 상담을 시작하세요.</h2><div class="actions"><a class="primary" href="#">카카오톡 사진 문의</a><a class="secondary" href="tel:01066484886">☎ 010-6648-4886</a></div></section>
+<section id="place-contact" class="contact local-contact"><span class="contact-badge">{data.name} · {cta.badge}</span><p>{data.name} 폐기물수거가 필요하신가요?</p><h2>{cta.title}</h2><small>{cta.tip}</small><div class="actions"><a class="primary" href="#">{cta.button}</a><a class="secondary" href="tel:01066484886">☎ 010-6648-4886</a></div></section>
 </main><footer><b>올바른수거</b><p>{data.district} {data.name} 폐기물·불용품 수거 상담</p></footer><div class="mobile-bar"><a href="tel:01066484886">☎ 전화문의</a><a href="#place-contact">● 카톡문의</a></div>
 </Layout>
