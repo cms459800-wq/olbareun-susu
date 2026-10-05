@@ -24,13 +24,34 @@ const pages=[
 return pages.map(data=>({params:{place:data.slug},props:{data}}));
 }
 const {data}=Astro.props;
+const profiles={
+seomyeon:{title:'서면 폐기물수거 | 상가·사무실 폐업정리 상담',lead:'서면 상권의 매장 교체, 사무실 이전, 폐업 후 남은 집기를 한 번에 확인하기 쉽게 정리해 상담합니다.',point:'상가 밀집지역은 물품 수량뿐 아니라 건물 출입과 작업 가능 시간 확인이 중요합니다.'},
+jeonpo:{title:'전포동 폐기물수거 | 카페·매장 집기 정리',lead:'전포동 카페와 소형 매장에서 생기는 테이블, 의자, 진열장 등 불용 집기를 사진으로 먼저 확인합니다.',point:'카페·매장은 주방 집기와 일반 가구가 섞이는 경우가 많아 품목별 사진이 도움이 됩니다.'},
+udong:{title:'해운대 우동 폐기물수거 | 아파트·센텀 사무실',lead:'우동 아파트의 가구 정리부터 센텀권 사무실의 책상·의자·불용 집기까지 현장 유형에 맞춰 상담합니다.',point:'공동주택과 업무시설은 엘리베이터 사용 및 차량 접근 가능 여부를 함께 확인합니다.'},
+jwadong:{title:'해운대 좌동 폐기물수거 | 이사 가구·가전 정리',lead:'좌동 아파트 이사 전후 남은 침대, 장롱, 식탁, 생활가전 등 부피가 큰 물품을 중심으로 상담합니다.',point:'대형 가구는 크기와 분해 필요 여부가 보이는 사진을 보내면 상담이 빨라집니다.'},
+gwangan:{title:'광안동 폐기물수거 | 상가·가정 가구 정리',lead:'광안동 주거지의 가구와 이사 잔여물, 상권의 매장 집기를 현장별로 구분해 상담합니다.',point:'골목이나 상가 밀집 구간은 차량 접근과 주차 가능 위치를 미리 확인하면 좋습니다.'},
+millak:{title:'민락동 폐기물수거 | 음식점·상가 집기 정리',lead:'민락동 음식점과 상가에서 발생하는 테이블, 의자, 선반, 주방 주변 불용 집기 정리를 상담합니다.',point:'주방 관련 물품은 일반 집기와 분리해 사진을 보내면 품목 확인이 수월합니다.'},
+yeonsan:{title:'연산동 폐기물수거 | 사무실·상가 집기 수거',lead:'연산동 업무지역의 사무실 책상·의자와 상가 집기, 주거지역의 가구 정리를 목적에 맞게 안내합니다.',point:'사무실은 동일 품목이 여러 개일 수 있어 전체 수량이 보이는 사진이 유용합니다.'},
+myeongji:{title:'명지동 폐기물수거 | 아파트 이사 가구·가전',lead:'명지동 아파트 이사와 집 정리 과정에서 남는 가구, 가전, 생활 불용품을 사진으로 간편하게 상담합니다.',point:'아파트는 동·층수와 엘리베이터 사용 여부를 함께 알려주면 현장 확인에 도움이 됩니다.'},
+hwamyeong:{title:'화명동 폐기물수거 | 아파트 가구·가전 정리',lead:'화명동 공동주택에서 버리기 어려운 침대, 소파, 장롱과 생활가전 등 대형 물품을 중심으로 상담합니다.',point:'가구 크기와 출입문·엘리베이터 이동 가능 여부가 보이면 상담 정확도가 높아집니다.'},
+sajik:{title:'사직동 폐기물수거 | 이사·가구·상가 집기',lead:'사직동 주거지역의 이사 잔여물과 가구, 인근 상가의 불용 집기를 상황에 맞게 상담합니다.',point:'이사 정리는 남은 물품을 한 곳에 모아 전체 사진을 보내면 수량 파악이 쉽습니다.'},
+nampo:{title:'남포동 폐기물수거 | 상가 폐업·매장 집기 정리',lead:'남포동 상가의 폐업·리뉴얼 과정에서 남는 진열장, 테이블, 의자와 각종 매장 집기를 상담합니다.',point:'상가 건물은 작업 가능 시간과 차량 정차 여건을 함께 확인하는 것이 중요합니다.'},
+choryang:{title:'초량동 폐기물수거 | 사무실·상가·이사 정리',lead:'초량동 사무실과 상가의 불용 집기부터 주거지 이사 후 남은 물품까지 용도별로 상담합니다.',point:'업무시설은 책상·의자·서랍장 등 품목별 대략적인 수량을 알려주면 좋습니다.'},
+dongsam:{title:'동삼동 폐기물수거 | 가정 가구·생활폐기물',lead:'동삼동 가정에서 처리하기 어려운 대형 가구와 생활 불용품, 이사 잔여물을 중심으로 상담합니다.',point:'계단 작업이 필요한 건물은 층수와 계단 폭 등 이동 조건을 미리 알려주세요.'},
+daeyeon:{title:'대연동 폐기물수거 | 가정·상가·사무실 정리',lead:'대연동의 주거, 상가, 소형 사무실에서 나오는 가구와 집기를 현장 성격에 맞춰 구분해 상담합니다.',point:'원룸·주택과 상가의 작업 조건이 달라 건물 유형을 함께 알려주면 좋습니다.'},
+hadan:{title:'하단동 폐기물수거 | 원룸 이사·상가 집기',lead:'하단동 원룸 이사 후 남은 가구와 생활용품, 상가의 불용 집기를 중심으로 사진 상담을 진행합니다.',point:'원룸은 침대·책상·수납장처럼 부피가 큰 품목을 우선 촬영하면 확인이 쉽습니다.'},
+jangjeon:{title:'장전동 폐기물수거 | 원룸·가구·상가 정리',lead:'장전동 원룸과 주거시설의 가구·가전, 상가에서 사용하던 집기를 품목과 수량에 맞춰 상담합니다.',point:'소형 주거공간은 여러 품목이 섞여 있으므로 전체 사진과 개별 사진을 함께 보내면 좋습니다.'},
+gamjeon:{title:'감전동 폐기물수거 | 사업장·창고 대량정리',lead:'감전동 사업장과 창고에서 발생하는 불용 집기, 선반, 사무가구 등 다량 물품 정리를 상담합니다.',point:'사업장·창고는 전체 물량과 차량 진입 공간이 보이는 사진이 특히 중요합니다.'},
+jeonggwan:{title:'정관읍 폐기물수거 | 아파트 이사·가구·가전',lead:'정관읍 아파트와 주거지역에서 이사·집정리 후 남는 대형 가구와 생활가전을 중심으로 상담합니다.',point:'공동주택은 관리실 작업 규정이나 엘리베이터 이용 조건을 미리 확인하면 좋습니다.'}
+};
+const profile=profiles[data.slug] ?? {title:data.name+' 폐기물수거 | 부산 올바른수거',lead:'버리기 어려운 물품의 전체 모습과 수량을 사진으로 보내주시면 상담이 빠릅니다.',point:'사진과 현장 조건을 함께 알려주시면 보다 정확하게 상담할 수 있습니다.'};
 ---
-<Layout title={data.name+' 폐기물수거 | 부산 올바른수거'} description={data.district+' '+data.name+' 폐기물수거 및 '+data.focus+' 상담. 사진으로 간편하게 수거 가능 여부를 확인하세요.'}>
+<Layout title={profile.title} description={profile.lead}>
 <header class="local-header"><a class="brand" href="/"><span class="logo">🚚</span><span><b>올바른수거</b><small>부산 폐기물·불용품 수거 전문</small></span></a><a href="/" class="back">← 부산지역 보기</a><a class="header-call" href="tel:01066484886">☎ 010-6648-4886</a></header>
 <main>
-<section class="place-hero"><div><p>{data.district} · {data.name}</p><h1>{data.name} 폐기물수거</h1><h2>{data.focus}</h2><p>버리기 어려운 물품의 전체 모습과 수량을 사진으로 보내주시면 상담이 빠릅니다.</p><div class="actions"><a class="primary" href="#place-contact">사진으로 수거 문의</a><a class="secondary" href="tel:01066484886">전화 상담</a></div></div><div class="image-placeholder area-main-image"><strong>{data.name} 수거 이미지</strong><span>추후 현장 WebP 이미지 교체</span></div></section>
+<section class="place-hero"><div><p>{data.district} · {data.name}</p><h1>{data.name} 폐기물수거</h1><h2>{data.focus}</h2><p>{profile.lead}</p><div class="actions"><a class="primary" href="#place-contact">사진으로 수거 문의</a><a class="secondary" href="tel:01066484886">전화 상담</a></div></div><div class="image-placeholder area-main-image"><strong>{data.name} 수거 이미지</strong><span>추후 현장 WebP 이미지 교체</span></div></section>
 <section class="section"><div class="section-head"><div><h2>{data.name}에서 이런 물품을 상담합니다</h2><p>현장 유형에 따라 수거 가능 여부와 작업 방법을 확인합니다.</p></div></div><div class="keyword-grid">{data.items.map(item=><article><span>✓</span><strong>{data.name} {item} 수거</strong><p>사진, 수량, 층수와 이동 여건을 알려주시면 상담에 도움이 됩니다.</p></article>)}</div></section>
-<section class="section local-places"><h2>{data.name} 수거 전 확인하면 좋은 정보</h2><div class="check-grid"><span>① 수거할 물품 사진</span><span>② 대략적인 수량</span><span>③ 건물 층수·엘리베이터</span><span>④ 차량 진입·주차 가능 여부</span></div></section>
+<section class="section local-places"><p class="local-point">✓ {profile.point}</p><h2>{data.name} 수거 전 확인하면 좋은 정보</h2><div class="check-grid"><span>① 수거할 물품 사진</span><span>② 대략적인 수량</span><span>③ 건물 층수·엘리베이터</span><span>④ 차량 진입·주차 가능 여부</span></div></section>
 <section class="section"><div class="section-head"><div><h2>{data.name} 현장 사례</h2><p>실제 작업 이미지와 내용으로 순차 교체할 영역입니다.</p></div></div><div class="cases">{[1,2,3,4].map(i=><article><div class="image-placeholder case-img"><span>{data.name} 사례 이미지 {i}</span></div><h3>{data.name} 수거 사례 {i}</h3><p>현장 사진 제작 후 품목과 작업 내용을 개별적으로 구성합니다.</p></article>)}</div></section>
 <section class="section faq"><h2>{data.name} 폐기물수거 FAQ</h2><details><summary>사진만으로 먼저 상담할 수 있나요?<span>＋</span></summary><p>네. 물품 전체와 주변 이동 공간이 보이는 사진을 보내주시면 보다 빠르게 확인할 수 있습니다.</p></details><details><summary>상가나 사무실 물품도 가능한가요?<span>＋</span></summary><p>집기 종류와 수량을 확인해 현장 상황에 맞게 상담합니다.</p></details></section>
 <section id="place-contact" class="contact"><p>{data.name} 폐기물수거가 필요하신가요?</p><h2>사진으로 간편하게 수거 상담을 시작하세요.</h2><div class="actions"><a class="primary" href="#">카카오톡 사진 문의</a><a class="secondary" href="tel:01066484886">☎ 010-6648-4886</a></div></section>
