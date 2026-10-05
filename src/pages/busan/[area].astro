@@ -26,21 +26,22 @@ const intro=data.intro ?? `${area}의 가정·상가·사무실 등 다양한 �
 const types=data.types ?? ['가구·가전 수거','사무실 집기','상가·사업장 정리'];
 
 const localLinks={
-'중구':[['남포동','nampo'],['부평동','bupyeong']],
-'동구':[['초량동','choryang'],['범일동','beomil']],
+ '중구':[['남포동','nampo'],['부평동','bupyeong'],['광복동','gwangbok']],
+ '동구':[['초량동','choryang'],['범일동','beomil'],['수정동','sujeong']],
 '영도구':[['동삼동','dongsam'],['청학동','cheonghak']],
-'부산진구':[['서면','seomyeon'],['전포동','jeonpo'],['부암동','buam']],
+'서구':[['동대신동','dongdaesin'],['서대신동','seodaesin'],['암남동','amnam'],['충무동','chungmu']],
+ '부산진구':[['서면','seomyeon'],['전포동','jeonpo'],['부암동','buam'],['부전동','bujeon']],
 '동래구':[['사직동','sajik'],['온천동','oncheon']],
-'남구':[['대연동','daeyeon'],['용호동','yongho']],
-'북구':[['화명동','hwamyeong'],['덕천동','deokcheon']],
-'해운대구':[['우동','udong'],['좌동','jwadong'],['재송동','jaesong']],
-'사하구':[['하단동','hadan'],['장림동','jangnim']],
+ '남구':[['대연동','daeyeon'],['용호동','yongho'],['문현동','munhyeon']],
+ '북구':[['화명동','hwamyeong'],['덕천동','deokcheon'],['구포동','gupo']],
+ '해운대구':[['우동','udong'],['좌동','jwadong'],['재송동','jaesong'],['중동','jungdong']],
+ '사하구':[['하단동','hadan'],['장림동','jangnim'],['괴정동','goejeong'],['다대동','dadae']],
 '금정구':[['장전동','jangjeon'],['구서동','guseo']],
-'강서구':[['명지동','myeongji'],['녹산동','noksan']],
+ '강서구':[['명지동','myeongji'],['녹산동','noksan'],['대저동','daejeo']],
 '연제구':[['연산동','yeonsan'],['거제동','geoje']],
-'수영구':[['광안동','gwangan'],['민락동','millak'],['남천동','namcheon']],
-'사상구':[['감전동','gamjeon'],['괘법동','gwaebeop']],
-'기장군':[['정관읍','jeonggwan'],['기장읍','gijang']]
+ '수영구':[['광안동','gwangan'],['민락동','millak'],['남천동','namcheon'],['망미동','mangmi']],
+ '사상구':[['감전동','gamjeon'],['괘법동','gwaebeop'],['주례동','jurye']],
+ '기장군':[['정관읍','jeonggwan'],['기장읍','gijang'],['일광읍','ilgwang']]
 };
 const linkedPlaces=localLinks[area] ?? [];
 const keywords=[area+' 폐기물수거',area+' 가구수거',area+' 사무실폐기물수거',area+' 상가폐기물수거',area+' 폐업정리',area+' 대량폐기물수거'];
