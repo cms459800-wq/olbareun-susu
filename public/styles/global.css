@@ -35,3 +35,11 @@
 
 .area-hero .hero-focus{font-size:20px;font-weight:700;line-height:1.6;margin:0 0 16px;color:#d8f3ff}
 @media(max-width:700px){.area-hero .hero-focus{font-size:17px}.breadcrumb a{font-weight:700}}
+
+.local-insight{background:#f6faff;border:1px solid #e1edf7;border-radius:24px;padding:34px;margin-top:28px}
+.local-insight h2{margin:4px 0 12px;color:#0b315d;font-size:28px}
+.local-insight>p:not(.eyebrow-local){margin:0;color:#566b80;line-height:1.8}
+.local-insight-note{display:flex;gap:18px;align-items:flex-start;margin-top:20px;padding:18px 20px;background:#fff;border-radius:16px;border:1px solid #e5edf5}
+.local-insight-note strong{flex:0 0 auto;color:#0870b9}
+.local-insight-note span{color:#52677c;line-height:1.65}
+@media(max-width:700px){.local-insight{padding:24px 20px;border-radius:18px}.local-insight h2{font-size:22px}.local-insight-note{display:block}.local-insight-note strong{display:block;margin-bottom:7px}}
