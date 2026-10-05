@@ -43,3 +43,13 @@
 .local-insight-note strong{flex:0 0 auto;color:#0870b9}
 .local-insight-note span{color:#52677c;line-height:1.65}
 @media(max-width:700px){.local-insight{padding:24px 20px;border-radius:18px}.local-insight h2{font-size:22px}.local-insight-note{display:block}.local-insight-note strong{display:block;margin-bottom:7px}}
+
+.district-insight{margin-top:28px;padding:34px;border-radius:24px;background:linear-gradient(135deg,#082c52,#0b4c7e);color:#fff}
+.district-insight .eyebrow-local{color:#79d9ff}
+.district-insight h2{margin:5px 0 12px;font-size:28px;color:#fff}
+.district-insight>p:not(.eyebrow-local){margin:0;max-width:900px;line-height:1.8;color:#dcecf8}
+.district-insight-links{display:flex;gap:18px;margin-top:22px;padding:17px 20px;border:1px solid rgba(255,255,255,.16);border-radius:15px;background:rgba(255,255,255,.08)}
+.district-insight-links strong{flex:0 0 auto;color:#8ee8ff}
+.district-insight-links span{line-height:1.6;color:#fff}
+.pending-contact{cursor:default;opacity:.72}
+@media(max-width:700px){.district-insight{padding:24px 20px;border-radius:18px}.district-insight h2{font-size:22px}.district-insight-links{display:block}.district-insight-links strong{display:block;margin-bottom:7px}}
