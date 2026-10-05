@@ -75,6 +75,7 @@ gwaebeop:{title:'괘법동 폐기물수거 | 사업장·상가 집기 정리',le
 gijang:{title:'기장읍 폐기물수거 | 가정·상가·사업장 정리',lead:'기장읍의 가정 가구부터 상가 집기와 사업장 불용품까지 현장 성격과 수량에 따라 상담합니다.',point:'지역 내 현장 유형이 다양하므로 건물 종류와 물품 전체 사진을 함께 알려주세요.'}
 };
 const profile=profiles[data.slug] ?? {title:data.name+' 폐기물수거 | 부산 올바른수거',lead:'버리기 어려운 물품의 전체 모습과 수량을 사진으로 보내주시면 상담이 빠릅니다.',point:'사진과 현장 조건을 함께 알려주시면 보다 정확하게 상담할 수 있습니다.'};
+const metaDescription=`부산 ${data.district} ${data.name} 폐기물수거 상담. ${data.focus}. ${profile.point}`;
 const scenarios={
 seomyeon:['폐업 매장의 테이블·진열장 정리','사무실 이전 후 책상·의자 정리','리뉴얼 전 매장 집기 분류','소형 상가 다품목 일괄 상담'],
 jeonpo:['카페 테이블·의자 교체 정리','매장 진열가구와 선반 정리','소형 사무실 이전 집기 정리','리뉴얼 후 남은 불용품 상담'],
@@ -130,7 +131,7 @@ const relatedGroups={
 };
 const related=(relatedGroups[data.district]??[]).filter(([,slug])=>slug!==data.slug);
 ---
-<Layout title={profile.title} description={profile.lead}>
+<Layout title={profile.title} description={metaDescription}>
 <header class="local-header"><a class="brand" href="/"><span class="logo">🚚</span><span><b>올바른수거</b><small>부산 폐기물·불용품 수거 전문</small></span></a><nav class="breadcrumb" aria-label="현재 위치"><a href="/">부산</a><span>›</span><span>{data.district}</span><span>›</span><strong>{data.name}</strong></nav><a class="header-call" href="tel:01066484886">☎ 010-6648-4886</a></header>
 <main>
 <section class="place-hero"><div><p>{data.district} · {data.name}</p><h1>{data.name} 폐기물수거</h1><h2>{data.focus}</h2><p>{profile.lead}</p><div class="actions"><a class="primary" href="#place-contact">{cta.button}</a><a class="secondary" href="tel:01066484886">전화 상담</a></div></div><div class="image-placeholder area-main-image"><strong>{data.name} 수거 이미지</strong><span>추후 현장 WebP 이미지 교체</span></div></section>
