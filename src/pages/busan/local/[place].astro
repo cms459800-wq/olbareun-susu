@@ -199,15 +199,13 @@ const relatedGroups={
 '기장군':[['정관읍','jeonggwan'],['기장읍','gijang']]
 };
 const related=(relatedGroups[data.district]??[]).filter(([,slug])=>slug!==data.slug);
-const pageUrl=new URL(Astro.url.pathname,Astro.url.origin).href;
-const homeUrl=new URL('/',Astro.url.origin).href;
 const breadcrumbJson={
 '@context':'https://schema.org','@type':'BreadcrumbList',
 itemListElement:[
-{'@type':'ListItem',position:1,name:'부산 폐기물수거',item:homeUrl},
+{'@type':'ListItem',position:1,name:'부산 폐기물수거'},
 {'@type':'ListItem',position:2,name:data.district,item:new URL('/busan/'+({
 '중구':'jung-gu','서구':'seo-gu','동구':'dong-gu','영도구':'yeongdo-gu','부산진구':'busanjin-gu','동래구':'dongnae-gu','남구':'nam-gu','북구':'buk-gu','해운대구':'haeundae-gu','사하구':'saha-gu','금정구':'geumjeong-gu','강서구':'gangseo-gu','연제구':'yeonje-gu','수영구':'suyeong-gu','사상구':'sasang-gu','기장군':'gijang-gun'}[data.district]),Astro.url.origin).href},
-{'@type':'ListItem',position:3,name:data.name,item:pageUrl}
+{'@type':'ListItem',position:3,name:data.name}
 ]};
 const faqJson={'@context':'https://schema.org','@type':'FAQPage',mainEntity:[
 ...pageFaq.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}})),
