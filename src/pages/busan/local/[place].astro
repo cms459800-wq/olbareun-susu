@@ -11,7 +11,15 @@ const pages=[
 {slug:'yeonsan',name:'연산동',district:'연제구',focus:'사무실·상가·가정 정리',items:['사무집기','상가 집기','가구·가전']},
 {slug:'myeongji',name:'명지동',district:'강서구',focus:'아파트 이사·가구·가전 정리',items:['가정 가구','가전제품','이사 잔여물']},
 {slug:'hwamyeong',name:'화명동',district:'북구',focus:'아파트 가구·가전·이사 정리',items:['대형 가구','생활 가전','이사 폐기물']},
-{slug:'sajik',name:'사직동',district:'동래구',focus:'가정·이사·상가 집기 정리',items:['가정 가구','이사 잔여물','상가 집기']}
+{slug:'sajik',name:'사직동',district:'동래구',focus:'가정·이사·상가 집기 정리',items:['가정 가구','이사 잔여물','상가 집기']},
+{slug:'nampo',name:'남포동',district:'중구',focus:'상가·매장·폐업 집기 정리',items:['매장 집기','진열장·가구','폐업 잔여물']},
+{slug:'choryang',name:'초량동',district:'동구',focus:'사무실·상가·이사 잔여물 정리',items:['사무집기','상가 집기','이사 잔여물']},
+{slug:'dongsam',name:'동삼동',district:'영도구',focus:'가정 가구·생활 불용품 정리',items:['대형 가구','생활 불용품','이사 잔여물']},
+{slug:'daeyeon',name:'대연동',district:'남구',focus:'주거·상가·사무실 집기 정리',items:['가정 가구','상가 집기','사무집기']},
+{slug:'hadan',name:'하단동',district:'사하구',focus:'상가·원룸·이사 폐기물 정리',items:['원룸 가구','상가 집기','이사 잔여물']},
+{slug:'jangjeon',name:'장전동',district:'금정구',focus:'원룸·상가·가구 정리',items:['원룸 가구','생활 가전','상가 집기']},
+{slug:'gamjeon',name:'감전동',district:'사상구',focus:'사업장·창고·사무집기 정리',items:['사업장 불용품','창고 물품','사무집기']},
+{slug:'jeonggwan',name:'정관읍',district:'기장군',focus:'아파트·이사·가구·가전 정리',items:['대형 가구','생활 가전','이사 잔여물']}
 ];
 return pages.map(data=>({params:{place:data.slug},props:{data}}));
 }
