@@ -127,6 +127,24 @@ home:{badge:'가구·이사 정리 상담',title:'버릴 가구와 가전을 사
 business:{badge:'사업장·대량 정리 상담',title:'사업장 전체 물량부터 간편하게 확인하세요',button:'사업장 대량수거 상담',tip:'전체 물량과 차량 진입·상차 공간을 함께 촬영하면 좋습니다.'}
 };
 const cta=ctaProfiles[faqType];
+const contentProfiles={
+commercial:{
+itemGuide:'매장 전체 모습과 정리할 집기의 종류·수량을 함께 확인하면 상담이 수월합니다.',
+sectionGuide:'매장 운영 여부, 작업 가능 시간과 차량 정차 여건까지 함께 확인합니다.',
+scenarioGuide:'상가·매장 현장은 집기 종류와 전체 물량, 작업 가능한 시간대를 함께 알려주세요.'
+},
+home:{
+itemGuide:'대형 물품의 크기와 건물 층수, 엘리베이터 이용 여부를 함께 확인합니다.',
+sectionGuide:'가구 크기와 이동 통로, 공동주택의 엘리베이터 사용 조건을 중심으로 확인합니다.',
+scenarioGuide:'가정·이사 현장은 큰 가구의 크기와 이동 경로가 보이는 사진을 보내주시면 좋습니다.'
+},
+business:{
+itemGuide:'전체 적재 규모와 품목별 대략적인 수량, 차량 진입 가능 여부를 함께 확인합니다.',
+sectionGuide:'대량 물량의 규모와 상차 공간, 차량 접근 동선을 중심으로 확인합니다.',
+scenarioGuide:'사업장·창고 현장은 전체 물량과 차량 진입·상차 공간을 함께 알려주세요.'
+}
+};
+const contentGuide=contentProfiles[faqType];
 const relatedGroups={
 '중구':[['남포동','nampo'],['부평동','bupyeong']],
 '동구':[['초량동','choryang'],['범일동','beomil']],
@@ -164,9 +182,9 @@ const faqJson={'@context':'https://schema.org','@type':'FAQPage',mainEntity:[
 <header class="local-header"><a class="brand" href="/"><span class="logo">🚚</span><span><b>올바른수거</b><small>부산 폐기물·불용품 수거 전문</small></span></a><nav class="breadcrumb" aria-label="현재 위치"><a href="/">부산</a><span>›</span><a href={'/busan/'+({'중구':'jung-gu','서구':'seo-gu','동구':'dong-gu','영도구':'yeongdo-gu','부산진구':'busanjin-gu','동래구':'dongnae-gu','남구':'nam-gu','북구':'buk-gu','해운대구':'haeundae-gu','사하구':'saha-gu','금정구':'geumjeong-gu','강서구':'gangseo-gu','연제구':'yeonje-gu','수영구':'suyeong-gu','사상구':'sasang-gu','기장군':'gijang-gun'}[data.district])}>{data.district}</a><span>›</span><strong>{data.name}</strong></nav><a class="header-call" href="tel:01066484886">☎ 010-6648-4886</a></header>
 <main>
 <section class="place-hero"><div><p>{data.district} · {data.name}</p><h1>{data.name} 폐기물수거</h1><p class="hero-focus">{data.focus}</p><p>{profile.lead}</p><div class="actions"><a class="primary" href="#place-contact">{cta.button}</a><a class="secondary" href="tel:01066484886">전화 상담</a></div></div><div class="image-placeholder area-main-image"><strong>{data.name} 수거 이미지</strong><span>추후 현장 WebP 이미지 교체</span></div></section>
-<section class="section"><div class="section-head"><div><h2>{data.name}에서 이런 물품을 상담합니다</h2><p>현장 유형에 따라 수거 가능 여부와 작업 방법을 확인합니다.</p></div></div><div class="keyword-grid">{data.items.map(item=><article><span>✓</span><strong>{data.name} {item} 수거</strong><p>사진, 수량, 층수와 이동 여건을 알려주시면 상담에 도움이 됩니다.</p></article>)}</div></section>
+<section class="section"><div class="section-head"><div><h2>{data.name}에서 이런 물품을 상담합니다</h2><p>{contentGuide.sectionGuide}</p></div></div><div class="keyword-grid">{data.items.map(item=><article><span>✓</span><strong>{data.name} {item} 수거</strong><p>{contentGuide.itemGuide}</p></article>)}</div></section>
 <section class="section local-places"><p class="local-point">✓ {profile.point}</p><h2>{data.name} 수거 전 확인하면 좋은 정보</h2><div class="check-grid"><span>① 수거할 물품 사진</span><span>② 대략적인 수량</span><span>③ 건물 층수·엘리베이터</span><span>④ 차량 진입·주차 가능 여부</span></div></section>
-<section class="section"><div class="section-head"><div><h2>{data.name}에서 자주 상담하는 정리 상황</h2><p>아래 내용은 실제 완료 사례가 아닌, {data.name}에서 상담할 수 있는 대표적인 상황 안내입니다.</p></div></div><div class="cases">{pageScenarios.map((scenario,i)=><article><div class="image-placeholder case-img"><span>{data.name} 상담 이미지 {i+1}</span></div><h3>{scenario}</h3><p>{data.focus}이 필요한 현장은 물품 사진과 수량, 이동 여건을 함께 알려주시면 확인이 빠릅니다.</p></article>)}</div></section>
+<section class="section"><div class="section-head"><div><h2>{data.name}에서 자주 상담하는 정리 상황</h2><p>아래 내용은 실제 완료 사례가 아닌, {data.name}에서 상담할 수 있는 대표적인 상황 안내입니다.</p></div></div><div class="cases">{pageScenarios.map((scenario,i)=><article><div class="image-placeholder case-img"><span>{data.name} 상담 이미지 {i+1}</span></div><h3>{scenario}</h3><p>{contentGuide.scenarioGuide}</p></article>)}</div></section>
 <section class="section faq"><h2>{data.name} 폐기물수거 FAQ</h2>{pageFaq.map(([q,a])=><details><summary>{q}<span>＋</span></summary><p>{a}</p></details>)}<details><summary>사진 상담 시 무엇을 보내면 좋나요?<span>＋</span></summary><p>{profile.point}</p></details></section>
 <section class="section nearby-section"><div class="section-head"><div><p class="eyebrow-local">NEARBY · {data.district}</p><h2>{data.name} 주변 지역 수거 안내</h2><p>같은 {data.district}의 다른 지역 수거 정보도 함께 확인해 보세요.</p></div></div><div class="nearby-grid">{related.map(([name,slug])=><a href={'/busan/local/'+slug}><span>{data.district}</span><strong>{name} 폐기물수거</strong><em>지역 안내 보기 →</em></a>)}</div></section>
 <section id="place-contact" class="contact local-contact"><span class="contact-badge">{data.name} · {cta.badge}</span><p>{data.name} 폐기물수거가 필요하신가요?</p><h2>{cta.title}</h2><small>{cta.tip}</small><div class="actions"><span class="primary pending-contact" aria-disabled="true">카카오톡 링크 준비중</span><a class="secondary" href="tel:01066484886">☎ 010-6648-4886</a></div></section>
