@@ -54,6 +54,25 @@ commercial:{service:'매장·사무실처럼 여러 집기가 섞인 현장은 �
 home:{service:'가정과 이사 현장은 대형 가구의 크기, 층수와 엘리베이터 등 이동 조건을 함께 확인합니다.',situations:['이사 후 침대·소파 등 대형가구 정리','가전 교체 후 생활 불용품 상담','집 정리 후 여러 품목 동시 상담'],faq:[['대형 가구 한두 개도 문의할 수 있나요?','가구 전체 사진과 크기, 층수 및 이동 조건을 보내주시면 수거 가능 여부를 확인할 수 있습니다.'],['아파트에서 어떤 정보를 알려줘야 하나요?','층수와 엘리베이터 이용 가능 여부, 차량 접근 여건을 함께 알려주시면 좋습니다.']]},
 business:{service:'사업장과 창고는 전체 물량, 동일 품목 수량과 차량 진입·상차 공간을 우선 확인합니다.',situations:['사업장 사무가구·불용집기 정리','창고 선반과 보관 물품 대량정리','차량 진입이 필요한 다량 물품 상담'],faq:[['사업장이나 창고 물량이 많아도 되나요?','전체 규모가 보이는 사진과 주요 품목의 대략적인 수량을 보내주시면 먼저 확인할 수 있습니다.'],['대량 수거는 무엇을 먼저 확인하나요?','물량뿐 아니라 차량 진입과 상차 공간, 건물 출입 조건을 함께 확인합니다.']]}
 };
+const districtInsights={
+'중구':['도심 상권과 업무지역을 나눠 확인','남포·광복 상권의 매장 집기와 중앙동 업무공간의 사무집기는 물품 구성과 작업 가능한 시간이 달라 현장 유형을 먼저 확인합니다.'],
+'서구':['주거 이사정리와 상가 물품을 구분','대신동권의 가정·이사 물품과 암남·충무권의 상가 집기는 건물 이동조건과 품목 구성을 나눠 확인합니다.'],
+'동구':['업무·상업지역의 집기 정리 중심','초량·범일권 사무실과 상가에서 나오는 책상·의자·매장 집기는 수량과 건물 출입조건을 함께 확인합니다.'],
+'영도구':['주거지와 창고형 현장의 이동조건 확인','동삼·청학의 가정 가구와 남항·영선의 상가·창고 물품은 경사·계단·차량 접근 등 반출 동선을 함께 살펴봅니다.'],
+'부산진구':['상권 폐업·이전 정리를 우선 확인','서면·전포의 매장 리뉴얼과 폐업, 사무실 이전처럼 여러 집기가 동시에 나오는 현장은 전체 물량과 작업시간을 먼저 확인합니다.'],
+'동래구':['주거 이사와 생활권 상가 정리 중심','사직·안락의 가정 이사물품과 온천·명륜의 상가·사무집기는 품목과 건물 조건에 맞춰 구분해 상담합니다.'],
+'남구':['주거·업무·사업장 유형을 나눠 확인','대연·용호의 주거 물품, 문현의 사무집기, 용당의 사업장 물품처럼 현장 성격에 따라 확인 항목을 달리합니다.'],
+'북구':['공동주택 가구와 생활권 상가 집기 중심','화명·만덕의 대형가구와 덕천·구포의 상가 집기는 엘리베이터·차량 접근 등 서로 다른 이동조건을 확인합니다.'],
+'해운대구':['공동주택과 업무시설의 반출조건 확인','우동·좌동의 아파트 가구와 재송·센텀권 업무공간 집기는 관리규정과 작업 동선을 함께 확인합니다.'],
+'사하구':['생활권과 사업장 대량물량을 구분','하단·괴정의 가정·상가 물품과 장림·다대의 사업장·창고 물량은 수량과 차량 진입조건을 중심으로 나눠 확인합니다.'],
+'금정구':['원룸·주거지와 상가 집기 정리 중심','장전·부곡의 원룸·상가 물품과 구서·남산의 가정 가구는 층수와 이동통로, 품목 크기를 함께 확인합니다.'],
+'강서구':['주거지역과 산업지역의 물량 차이를 반영','명지의 가정·이사 물품과 녹산·대저의 사업장·창고 대량물량은 차량 진입과 상차공간까지 구분해 확인합니다.'],
+'연제구':['업무지역 사무집기와 주거 이사정리 중심','연산의 사무실·상가 집기와 거제의 공동주택 가구는 수량과 이동설비 등 현장별 조건을 나눠 확인합니다.'],
+'수영구':['상권 매장집기와 공동주택 가구를 구분','광안·민락의 상가 집기와 남천·망미의 가정 가구는 작업시간과 엘리베이터 등 서로 다른 조건을 확인합니다.'],
+'사상구':['사업장·창고의 대량 정리를 우선 확인','감전·괘법의 사업장과 창고는 전체 적재 규모와 상차공간을, 주례·모라 생활권은 가구 이동조건을 중심으로 확인합니다.'],
+'기장군':['넓은 생활권별 현장 유형을 먼저 확인','정관·일광의 공동주택 이사물품과 기장·장안의 상가·사업장 물품은 거리보다 현장 유형과 전체 물량을 먼저 확인합니다.']
+};
+const districtInsight=districtInsights[area];
 const guide=guideProfiles[areaKinds[area]??'home'];
 const districtUrl=new URL(Astro.url.pathname,Astro.url.origin).href;
 const districtBreadcrumb={'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[
@@ -70,11 +89,11 @@ const districtFaq={'@context':'https://schema.org','@type':'FAQPage',mainEntity:
 <main>
 <section class="area-hero district-hero"><div><p class="district-kicker">BUSAN · {area} COLLECTION GUIDE</p><h1>{area} 폐기물수거<br><em>{data.focus}</em></h1><p>{intro}</p><div class="district-facts"><span>사진으로 물품 확인</span><span>현장 이동조건 확인</span><span>{area} 지역별 안내</span></div><div class="actions"><a class="primary" href="#area-contact">사진으로 수거 상담</a><a class="secondary" href="tel:01066484886">☎ 전화 상담</a></div></div><div class="image-placeholder area-main-image"><strong>{area} 수거 안내 이미지</strong><span>지역 현장 WebP 이미지 교체 예정</span></div></section>
 <section class="section local-intro"><p class="eyebrow-local">LOCAL GUIDE · {area}</p><h2>{area} 현장에 맞춘 수거 안내</h2><p>{intro}</p><div class="type-chips">{types.map(t=><span>{t}</span>)}</div></section>
-<section class="section"><div class="section-head"><div><p class="eyebrow-local">SERVICE GUIDE</p><h2>{area} 주요 수거 서비스</h2><p>{guide.service}</p></div></div><div class="keyword-grid">{types.map((t,i)=><article><span>0{i+1}</span><strong>{area} {t}</strong><p>{guide.situations[i]}</p></article>)}</div></section>
+<section class="section district-insight"><p class="eyebrow-local">DISTRICT CHECK · {area}</p><h2>{districtInsight[0]}</h2><p>{districtInsight[1]}</p><div class="district-insight-links"><strong>{area} 세부지역 안내</strong><span>{data.places.join(" · ")}</span></div></section>\n<section class="section"><div class="section-head"><div><p class="eyebrow-local">SERVICE GUIDE</p><h2>{area} 주요 수거 서비스</h2><p>{guide.service}</p></div></div><div class="keyword-grid">{types.map((t,i)=><article><span>0{i+1}</span><strong>{area} {t}</strong><p>{guide.situations[i]}</p></article>)}</div></section>
 <section class="section local-places district-places"><p class="eyebrow-local">LOCAL AREA</p><h2>{area} 세부지역 수거 안내</h2><p>{data.places.join(' · ')} 등 {area} 지역별 정보를 확인해 보세요.</p><div>{data.places.map(p=>{const match=linkedPlaces.find(([name])=>name===p);return match?<a class="place-link" href={'/busan/local/'+match[1]}><small>{area}</small><b>{p} 폐기물수거</b><em>지역 안내 →</em></a>:<span class="place-pending"><small>{area}</small><b>{p} 폐기물수거</b><em>상담 가능</em></span>})}</div></section>
 <section class="section"><div class="section-head"><div><p class="eyebrow-local">CONSULT EXAMPLES</p><h2>{area}에서 자주 상담하는 정리 상황</h2><p>실제 완료 실적이 아닌, {area}에서 상담할 수 있는 대표 상황 안내입니다.</p></div></div><div class="cases district-cases">{guide.situations.map((s,i)=><article><div class="image-placeholder case-img"><span>{area} 상담 이미지 {i+1}</span></div><h3>{s}</h3><p>{types[i]} 관련 물품은 전체 사진과 현장 조건을 함께 알려주세요.</p></article>)}</div></section>
 <section class="section faq local-faq"><p class="eyebrow-local">FAQ · {area}</p><h2>{area} 수거 FAQ</h2>{guide.faq.map(([q,a])=><details><summary>{q}<span>＋</span></summary><p>{a}</p></details>)}<details><summary>사진 상담에는 무엇을 보내면 좋나요?<span>＋</span></summary><p>{guide.service}</p></details></section>
-<section id="area-contact" class="contact"><p>{area}에서 처리가 어려운 물품이 있으신가요?</p><h2>사진을 보내주시면 수거 가능 여부를 빠르게 상담해 드립니다.</h2><div class="actions"><a class="primary" href="#">카카오톡 사진 문의</a><a class="secondary" href="tel:01066484886">☎ 010-6648-4886</a></div></section>
+<section id="area-contact" class="contact"><p>{area}에서 처리가 어려운 물품이 있으신가요?</p><h2>사진을 보내주시면 수거 가능 여부를 빠르게 상담해 드립니다.</h2><div class="actions"><span class="primary pending-contact" aria-disabled="true">카카오톡 링크 준비중</span><a class="secondary" href="tel:01066484886">☎ 010-6648-4886</a></div></section>
 </main>
 <footer><b>올바른수거</b><p>부산 {area} 폐기물·불용품 수거 상담</p></footer><div class="mobile-bar"><a href="tel:01066484886">☎ 전화문의</a><a href="#area-contact">● 카톡문의</a></div>
 </Layout>
