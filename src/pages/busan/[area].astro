@@ -26,13 +26,21 @@ const intro=data.intro ?? `${area}의 가정·상가·사무실 등 다양한 �
 const types=data.types ?? ['가구·가전 수거','사무실 집기','상가·사업장 정리'];
 
 const localLinks={
+'중구':[['남포동','nampo']],
+'동구':[['초량동','choryang']],
+'영도구':[['동삼동','dongsam']],
 '부산진구':[['서면','seomyeon'],['전포동','jeonpo']],
-'해운대구':[['우동','udong'],['좌동','jwadong']],
-'수영구':[['광안동','gwangan'],['민락동','millak']],
-'연제구':[['연산동','yeonsan']],
-'강서구':[['명지동','myeongji']],
+'동래구':[['사직동','sajik']],
+'남구':[['대연동','daeyeon']],
 '북구':[['화명동','hwamyeong']],
-'동래구':[['사직동','sajik']]
+'해운대구':[['우동','udong'],['좌동','jwadong']],
+'사하구':[['하단동','hadan']],
+'금정구':[['장전동','jangjeon']],
+'강서구':[['명지동','myeongji']],
+'연제구':[['연산동','yeonsan']],
+'수영구':[['광안동','gwangan'],['민락동','millak']],
+'사상구':[['감전동','gamjeon']],
+'기장군':[['정관읍','jeonggwan']]
 };
 const linkedPlaces=localLinks[area] ?? [];
 const keywords=[area+' 폐기물수거',area+' 가구수거',area+' 사무실폐기물수거',area+' 상가폐기물수거',area+' 폐업정리',area+' 대량폐기물수거'];
