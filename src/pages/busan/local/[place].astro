@@ -45,6 +45,36 @@ gamjeon:{title:'감전동 폐기물수거 | 사업장·창고 대량정리',lead
 jeonggwan:{title:'정관읍 폐기물수거 | 아파트 이사·가구·가전',lead:'정관읍 아파트와 주거지역에서 이사·집정리 후 남는 대형 가구와 생활가전을 중심으로 상담합니다.',point:'공동주택은 관리실 작업 규정이나 엘리베이터 이용 조건을 미리 확인하면 좋습니다.'}
 };
 const profile=profiles[data.slug] ?? {title:data.name+' 폐기물수거 | 부산 올바른수거',lead:'버리기 어려운 물품의 전체 모습과 수량을 사진으로 보내주시면 상담이 빠릅니다.',point:'사진과 현장 조건을 함께 알려주시면 보다 정확하게 상담할 수 있습니다.'};
+const scenarios={
+seomyeon:['폐업 매장의 테이블·진열장 정리','사무실 이전 후 책상·의자 정리','리뉴얼 전 매장 집기 분류','소형 상가 다품목 일괄 상담'],
+jeonpo:['카페 테이블·의자 교체 정리','매장 진열가구와 선반 정리','소형 사무실 이전 집기 정리','리뉴얼 후 남은 불용품 상담'],
+udong:['아파트 이사 후 대형가구 정리','센텀 사무실 책상·의자 정리','상가 리뉴얼 불용집기 정리','가구·사무집기 혼합 물량 상담'],
+jwadong:['아파트 침대·장롱 정리','이사 후 식탁·수납가구 정리','생활가전과 가구 동시 상담','집 정리 후 다품목 수거 상담'],
+gwangan:['주거지 이사 잔여물 정리','상가 테이블·진열장 정리','가정 대형가구 정리','골목 상가 집기 수거 상담'],
+millak:['음식점 테이블·의자 정리','매장 선반·수납가구 정리','주방 주변 불용집기 상담','가정·상가 혼합 물품 정리'],
+yeonsan:['사무실 책상·의자 대량 정리','상가 이전 후 집기 정리','가정 가구·가전 정리','업무공간 수납장·서랍장 상담'],
+myeongji:['아파트 이사 대형가구 정리','생활가전 교체 후 불용품 정리','집 정리 다품목 상담','입주·이사 전후 잔여물 정리'],
+hwamyeong:['아파트 소파·침대 정리','장롱·수납가구 정리','가전 교체 불용품 상담','이사 후 가구·생활용품 정리'],
+sajik:['이사 후 가구 정리','상가 집기 교체 정리','가정 생활 불용품 상담','가구와 이사 잔여물 동시 정리'],
+nampo:['폐업 매장 진열장 정리','상가 테이블·의자 정리','매장 리뉴얼 불용집기 상담','상업시설 다품목 정리'],
+choryang:['사무실 이전 집기 정리','상가 불용가구 정리','주거지 이사 잔여물 상담','책상·의자·수납장 동시 정리'],
+dongsam:['가정 대형가구 정리','이사 후 생활 불용품 정리','침대·소파·수납장 상담','계단 이동이 필요한 가구 상담'],
+daeyeon:['원룸·주택 가구 정리','상가 테이블·선반 정리','소형 사무실 집기 상담','이사·가구 혼합 물량 정리'],
+hadan:['원룸 이사 후 가구 정리','상가 집기 교체 정리','침대·책상·수납장 상담','이사 잔여물 다품목 정리'],
+jangjeon:['원룸 침대·책상 정리','생활가전 교체 정리','상가 테이블·집기 상담','소형 주거공간 다품목 정리'],
+gamjeon:['사업장 사무가구 정리','창고 선반·불용물품 정리','다량 책상·의자 상담','차량 진입이 필요한 대량 정리'],
+jeonggwan:['아파트 이사 가구 정리','침대·소파·식탁 정리','생활가전 교체 상담','집 정리 후 다품목 수거 상담']
+};
+const faqProfiles={
+commercial:[['폐업이나 리뉴얼 전에 미리 상담할 수 있나요?','가능합니다. 정리 예정 품목과 대략적인 수량, 작업 희망 시점을 알려주시면 확인에 도움이 됩니다.'],['매장 집기가 여러 종류여도 되나요?','테이블, 의자, 진열장 등 품목별 사진과 전체 물량 사진을 함께 보내주시면 상담하기 좋습니다.']],
+home:[['대형 가구 한두 개도 사진 상담이 가능한가요?','가능 여부 확인을 위해 가구 전체와 이동 통로가 보이는 사진을 보내주세요.'],['아파트에서 미리 확인할 것은 무엇인가요?','층수, 엘리베이터 이용 가능 여부와 차량 접근 여건을 알려주시면 상담에 도움이 됩니다.']],
+business:[['사업장 물량이 많아도 상담할 수 있나요?','전체 물량이 보이는 사진과 주요 품목의 수량을 알려주시면 먼저 확인할 수 있습니다.'],['창고나 사업장은 어떤 사진이 필요한가요?','물품 전체 모습과 차량 진입 공간, 이동 동선이 함께 보이도록 촬영하면 좋습니다.']]
+};
+const commercialSlugs=['seomyeon','jeonpo','gwangan','millak','nampo'];
+const businessSlugs=['yeonsan','gamjeon','choryang'];
+const faqType=businessSlugs.includes(data.slug)?'business':commercialSlugs.includes(data.slug)?'commercial':'home';
+const pageScenarios=scenarios[data.slug] ?? data.items.map(i=>i+' 상담');
+const pageFaq=faqProfiles[faqType];
 ---
 <Layout title={profile.title} description={profile.lead}>
 <header class="local-header"><a class="brand" href="/"><span class="logo">🚚</span><span><b>올바른수거</b><small>부산 폐기물·불용품 수거 전문</small></span></a><a href="/" class="back">← 부산지역 보기</a><a class="header-call" href="tel:01066484886">☎ 010-6648-4886</a></header>
@@ -52,8 +82,8 @@ const profile=profiles[data.slug] ?? {title:data.name+' 폐기물수거 | 부산
 <section class="place-hero"><div><p>{data.district} · {data.name}</p><h1>{data.name} 폐기물수거</h1><h2>{data.focus}</h2><p>{profile.lead}</p><div class="actions"><a class="primary" href="#place-contact">사진으로 수거 문의</a><a class="secondary" href="tel:01066484886">전화 상담</a></div></div><div class="image-placeholder area-main-image"><strong>{data.name} 수거 이미지</strong><span>추후 현장 WebP 이미지 교체</span></div></section>
 <section class="section"><div class="section-head"><div><h2>{data.name}에서 이런 물품을 상담합니다</h2><p>현장 유형에 따라 수거 가능 여부와 작업 방법을 확인합니다.</p></div></div><div class="keyword-grid">{data.items.map(item=><article><span>✓</span><strong>{data.name} {item} 수거</strong><p>사진, 수량, 층수와 이동 여건을 알려주시면 상담에 도움이 됩니다.</p></article>)}</div></section>
 <section class="section local-places"><p class="local-point">✓ {profile.point}</p><h2>{data.name} 수거 전 확인하면 좋은 정보</h2><div class="check-grid"><span>① 수거할 물품 사진</span><span>② 대략적인 수량</span><span>③ 건물 층수·엘리베이터</span><span>④ 차량 진입·주차 가능 여부</span></div></section>
-<section class="section"><div class="section-head"><div><h2>{data.name} 현장 사례</h2><p>실제 작업 이미지와 내용으로 순차 교체할 영역입니다.</p></div></div><div class="cases">{[1,2,3,4].map(i=><article><div class="image-placeholder case-img"><span>{data.name} 사례 이미지 {i}</span></div><h3>{data.name} 수거 사례 {i}</h3><p>현장 사진 제작 후 품목과 작업 내용을 개별적으로 구성합니다.</p></article>)}</div></section>
-<section class="section faq"><h2>{data.name} 폐기물수거 FAQ</h2><details><summary>사진만으로 먼저 상담할 수 있나요?<span>＋</span></summary><p>네. 물품 전체와 주변 이동 공간이 보이는 사진을 보내주시면 보다 빠르게 확인할 수 있습니다.</p></details><details><summary>상가나 사무실 물품도 가능한가요?<span>＋</span></summary><p>집기 종류와 수량을 확인해 현장 상황에 맞게 상담합니다.</p></details></section>
+<section class="section"><div class="section-head"><div><h2>{data.name}에서 자주 상담하는 정리 상황</h2><p>아래 내용은 실제 완료 사례가 아닌, {data.name}에서 상담할 수 있는 대표적인 상황 안내입니다.</p></div></div><div class="cases">{pageScenarios.map((scenario,i)=><article><div class="image-placeholder case-img"><span>{data.name} 상담 이미지 {i+1}</span></div><h3>{scenario}</h3><p>{data.focus}이 필요한 현장은 물품 사진과 수량, 이동 여건을 함께 알려주시면 확인이 빠릅니다.</p></article>)}</div></section>
+<section class="section faq"><h2>{data.name} 폐기물수거 FAQ</h2>{pageFaq.map(([q,a])=><details><summary>{q}<span>＋</span></summary><p>{a}</p></details>)}<details><summary>사진 상담 시 무엇을 보내면 좋나요?<span>＋</span></summary><p>{profile.point}</p></details></section>
 <section id="place-contact" class="contact"><p>{data.name} 폐기물수거가 필요하신가요?</p><h2>사진으로 간편하게 수거 상담을 시작하세요.</h2><div class="actions"><a class="primary" href="#">카카오톡 사진 문의</a><a class="secondary" href="tel:01066484886">☎ 010-6648-4886</a></div></section>
 </main><footer><b>올바른수거</b><p>{data.district} {data.name} 폐기물·불용품 수거 상담</p></footer><div class="mobile-bar"><a href="tel:01066484886">☎ 전화문의</a><a href="#place-contact">● 카톡문의</a></div>
 </Layout>
