@@ -1,8 +1,9 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 ---
-<Layout title="공지사항 | 올바른수거" description="올바른수거 공지사항 상세">
+<Layout title="공지사항 | 올바른수거" description="올바른수거 공지사항 상세"><header class="board-header"><a href="/" class="brand"><img class="brand-logo" src="/images/logo.png" alt="올바른수거" /></a><nav><a href="/">홈</a><a href="/notice">공지사항</a><a href="/inquiry">수거 문의</a></nav><a class="header-call" href="tel:01066484886">☎ 010-6648-4886</a><button class="board-menu" aria-label="메뉴 열기">☰</button></header><div class="board-mobile-nav"><a href="/">홈</a><a href="/notice">공지사항</a><a href="/inquiry">수거 문의</a><a href="tel:01066484886">전화 상담</a></div>
 <main class="board-page"><div class="board-hero"><span>NOTICE</span><h1>공지사항</h1></div><section class="board-shell"><article class="board-detail" id="notice-detail"><div class="board-empty">공지사항을 불러오는 중입니다.</div></article></section></main>
 <script is:inline>
+const _bm=document.querySelector('.board-menu'),_bn=document.querySelector('.board-mobile-nav');_bm?.addEventListener('click',()=>_bn?.classList.toggle('open'));
 const id=new URLSearchParams(location.search).get('id'),d=document.querySelector('#notice-detail');fetch('https://dctolxhyifismoxjqtrk.supabase.co/functions/v1/public-board?action=notice-read',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id})}).then(async r=>{const j=await r.json();if(!r.ok)throw new Error(j.error);d.innerHTML='<div class="detail-head"><h2></h2><p></p></div><div class="detail-content"></div><a class="back-list" href="/notice">목록으로</a>';d.querySelector('h2').textContent=j.title;d.querySelector('.detail-head p').textContent=new Date(j.created_at).toLocaleDateString('ko-KR')+' · 조회 '+j.views;d.querySelector('.detail-content').textContent=j.content}).catch(e=>d.innerHTML='<div class="board-empty">'+e.message+'</div>');
-</script></Layout>
+</script><footer><b>올바른수거</b><p>부산 폐기물·불용품 수거 상담 · 010-6648-4886</p></footer></Layout>
