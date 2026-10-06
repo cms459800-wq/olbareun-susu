@@ -300,3 +300,8 @@ a,button{-webkit-tap-highlight-color:transparent}
 @media(max-width:800px){.district-hero .district-chat{margin:38px auto 4px;width:min(100%,390px)}.district-chat-label{top:-14px;font-size:12px;padding:8px 15px}}
 
 .district-chat .chat-area-name{font-style:normal;margin-left:6px;padding-left:7px;border-left:1px solid #cbdbe6;color:#0872b5;font-size:11px;font-weight:900;white-space:nowrap}
+
+.district-chat .chat-area-name{display:inline-flex;align-items:center;gap:4px}
+.area-live-dot{display:inline-block;width:7px;height:7px;margin-left:3px;border-radius:50%;background:#ef2b2d;box-shadow:0 0 0 rgba(239,43,45,.55);animation:areaLivePulse 1.15s ease-in-out infinite}
+.area-live-text{color:#e32629;font-size:10px;font-weight:900}
+@keyframes areaLivePulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(239,43,45,.5)}50%{opacity:.35;box-shadow:0 0 0 5px rgba(239,43,45,0)}}
