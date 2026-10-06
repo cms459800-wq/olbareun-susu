@@ -76,3 +76,23 @@ a,button{-webkit-tap-highlight-color:transparent}
 
 /* Brand logo */
 .brand{display:flex;align-items:center;margin-right:auto;line-height:0}.brand-logo{display:block;width:auto;height:58px;max-width:300px;object-fit:contain;object-position:left center}@media(max-width:800px){.brand-logo{height:48px;max-width:230px}}@media(max-width:380px){.brand-logo{height:43px;max-width:205px}}
+
+
+/* Neighborhood local consultation guide */
+.local-guide{margin-top:28px}
+.local-guide .section-head{margin-bottom:18px}
+.local-guide .section-head p:last-child{max-width:760px;line-height:1.75}
+.local-guide-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.local-guide-grid article{position:relative;min-width:0;padding:24px 22px;border:1px solid #dfe9f1;border-radius:18px;background:linear-gradient(145deg,#fff 0%,#f7fbff 100%);box-shadow:0 8px 24px rgba(20,67,103,.05)}
+.local-guide-grid article>b{display:inline-flex;align-items:center;min-height:25px;padding:5px 9px;border-radius:999px;background:#e9f6ff;color:#0874bb;font-size:10px;font-weight:900;letter-spacing:.4px}
+.local-guide-grid h3{margin:13px 0 8px;color:#103b61;font-size:18px;line-height:1.45}
+.local-guide-grid p{margin:0;color:#5b6f81;font-size:13px;line-height:1.8;word-break:keep-all}
+@media(max-width:800px){
+  .local-guide{margin-top:18px}
+  .local-guide .section-head{margin-bottom:12px}
+  .local-guide-grid{grid-template-columns:1fr;gap:9px}
+  .local-guide-grid article{padding:18px 17px;border-radius:14px;box-shadow:none}
+  .local-guide-grid article>b{font-size:9px;min-height:23px}
+  .local-guide-grid h3{font-size:16px;margin:10px 0 6px}
+  .local-guide-grid p{font-size:12px;line-height:1.75}
+}
