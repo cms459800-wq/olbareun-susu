@@ -124,3 +124,21 @@ a,button{-webkit-tap-highlight-color:transparent}
 @keyframes floatChat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
 @media(max-width:800px){.hero-chat{min-height:430px;padding:10px 4px 22px}.chat-phone{width:min(100%,350px);height:410px;border-width:6px;border-radius:25px}.chat-head{height:70px;padding:18px 14px 8px}.chat-head img{width:82px}.chat-body{height:calc(100% - 70px);padding:11px}.bubble{font-size:9px;padding:8px 9px}.chat-float{font-size:9px}.chat-float-a{left:2px;top:58px}.chat-float-b{right:2px;bottom:52px}}
 @media(prefers-reduced-motion:reduce){.chat-row,.typing,.typing span,.chat-float{animation:none!important;opacity:1!important;transform:none!important}.typing{display:none}}
+
+
+/* Realistic smartphone shell */
+.chat-phone{overflow:visible!important;padding:5px;background:linear-gradient(145deg,#334a5c,#0a1721 45%,#415667);border:1px solid rgba(255,255,255,.38)!important;box-shadow:0 30px 65px rgba(2,20,35,.38),inset 0 0 0 1px rgba(255,255,255,.18)}
+.chat-phone:before{display:none}
+.phone-screen{position:relative;width:100%;height:100%;overflow:hidden;border-radius:23px;background:#eef5f9;box-shadow:inset 0 0 0 1px rgba(0,0,0,.25)}
+.phone-status{position:relative;z-index:20;height:29px;padding:8px 14px 0;display:flex;justify-content:space-between;align-items:flex-start;background:#fff;color:#102738;font-size:8px;font-weight:900}
+.dynamic-island{position:absolute;top:6px;left:50%;width:74px;height:18px;transform:translateX(-50%);border-radius:14px;background:#05080a;box-shadow:inset 0 0 0 1px #111}
+.dynamic-island:after{content:"";position:absolute;right:7px;top:6px;width:5px;height:5px;border-radius:50%;background:#12263a;box-shadow:0 0 0 1px #24384a}
+.status-icons{display:flex;align-items:center;gap:5px;height:10px}.status-icons i{display:block;position:relative}
+.signal{width:10px;height:7px;background:linear-gradient(to top,right);border-bottom:6px solid #102738;border-left:2px solid transparent;clip-path:polygon(0 100%,20% 70%,40% 70%,40% 45%,60% 45%,60% 25%,80% 25%,80% 0,100% 0,100% 100%)}
+.wifi{width:10px;height:7px;border-top:2px solid #102738;border-radius:50%}.wifi:after{content:"";position:absolute;width:3px;height:3px;left:3px;top:3px;border-radius:50%;background:#102738}
+.battery{width:13px;height:7px;border:1px solid #102738;border-radius:2px}.battery:before{content:"";position:absolute;left:1px;top:1px;width:8px;height:3px;background:#102738;border-radius:1px}.battery:after{content:"";position:absolute;right:-3px;top:2px;width:2px;height:3px;background:#102738;border-radius:0 1px 1px 0}
+.phone-screen .chat-head{height:61px;padding:8px 16px 8px}.phone-screen .chat-body{height:calc(100% - 90px);padding-bottom:25px}
+.home-indicator{position:absolute;z-index:30;bottom:6px;left:50%;width:104px;height:4px;transform:translateX(-50%);border-radius:4px;background:#101820;opacity:.9}
+.phone-button{position:absolute;display:block;background:#263b4b;border-radius:3px 0 0 3px;box-shadow:inset 1px 0 rgba(255,255,255,.2)}
+.phone-button-a{left:-4px;top:92px;width:4px;height:28px}.phone-button-b{left:-4px;top:132px;width:4px;height:48px}.phone-button-c{right:-4px;top:120px;width:4px;height:67px;border-radius:0 3px 3px 0}
+@media(max-width:800px){.phone-screen{border-radius:19px}.phone-status{height:27px}.dynamic-island{width:68px;height:17px}.phone-screen .chat-head{height:57px}.phone-screen .chat-body{height:calc(100% - 84px)}.home-indicator{width:92px}}
