@@ -1,0 +1,8 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="공지사항 | 올바른수거" description="올바른수거 공지사항 상세">
+<main class="board-page"><div class="board-hero"><span>NOTICE</span><h1>공지사항</h1></div><section class="board-shell"><article class="board-detail" id="notice-detail"><div class="board-empty">공지사항을 불러오는 중입니다.</div></article></section></main>
+<script is:inline>
+const id=new URLSearchParams(location.search).get('id'),d=document.querySelector('#notice-detail');fetch('https://dctolxhyifismoxjqtrk.supabase.co/functions/v1/public-board?action=notice-read',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id})}).then(async r=>{const j=await r.json();if(!r.ok)throw new Error(j.error);d.innerHTML='<div class="detail-head"><h2></h2><p></p></div><div class="detail-content"></div><a class="back-list" href="/notice">목록으로</a>';d.querySelector('h2').textContent=j.title;d.querySelector('.detail-head p').textContent=new Date(j.created_at).toLocaleDateString('ko-KR')+' · 조회 '+j.views;d.querySelector('.detail-content').textContent=j.content}).catch(e=>d.innerHTML='<div class="board-empty">'+e.message+'</div>');
+</script></Layout>
