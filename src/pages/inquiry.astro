@@ -8,5 +8,6 @@ import Layout from '../layouts/Layout.astro';
 <footer><b>올바른수거</b><p>부산 폐기물·불용품 수거 상담 · 010-6648-4886</p></footer>
 <script is:inline>
 const b=document.querySelector('.board-menu'),n=document.querySelector('.board-mobile-nav');b?.addEventListener('click',()=>n?.classList.toggle('open'));
+const box=document.querySelector('#inquiry-list');fetch('https://dctolxhyifismoxjqtrk.supabase.co/functions/v1/public-board?action=inquiries').then(r=>r.json()).then(rows=>{const head=box.firstElementChild;box.innerHTML='';box.append(head);if(!rows.length){box.insertAdjacentHTML('beforeend','<div class="board-empty">등록된 수거 문의가 없습니다.</div>');return}rows.forEach((x,i)=>{const a=document.createElement('a');a.className='board-row';a.href='/inquiry/view?id='+x.id;a.innerHTML='<span>'+(rows.length-i)+'</span><strong></strong><span></span><span>'+new Date(x.created_at).toLocaleDateString('ko-KR')+'</span><span class="board-status"></span>';a.querySelector('strong').textContent='🔒 '+x.title;a.children[2].textContent=x.author_name;a.lastElementChild.textContent=x.status;if(x.status==='답변완료')a.lastElementChild.classList.add('done');box.append(a)})}).catch(()=>box.querySelector('.board-empty').textContent='목록을 불러오지 못했습니다.');
 </script>
 </Layout>
