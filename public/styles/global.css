@@ -234,3 +234,10 @@ a,button{-webkit-tap-highlight-color:transparent}
 .service-card-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .35s ease}
 .service-card:hover .service-card-image img{transform:scale(1.035)}
 @media(max-width:800px){.service-card-image{height:130px}}
+
+
+/* Busan district button images */
+.area-card-image{width:100%;height:105px;overflow:hidden;border-radius:11px;background:#dbeaf3}
+.area-card-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .35s ease}
+.area-card:hover .area-card-image img{transform:scale(1.05)}
+@media(max-width:800px){.area-card-image{height:82px}}
