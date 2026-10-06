@@ -1,0 +1,6 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="관리자 로그인 | 올바른수거"><main class="board-page"><div class="board-hero"><span>ADMIN</span><h1>관리자 접속</h1><p>올바른수거 게시판 관리</p></div><section class="board-shell"><form class="secret-box" id="admin-login"><label>이메일<input type="email" name="email" required autocomplete="username"></label><label>비밀번호<input type="password" name="password" required autocomplete="current-password"></label><button>로그인</button><a href="/">홈으로</a><p class="form-message"></p></form></section></main><script is:inline>
+const URL='https://dctolxhyifismoxjqtrk.supabase.co',KEY='sb_publishable_Zaa5aBWyZNymB8xWX611HQ_rmXYbZAu',f=document.querySelector('#admin-login'),m=f.querySelector('.form-message');f.addEventListener('submit',async e=>{e.preventDefault();const x=Object.fromEntries(new FormData(f));const r=await fetch(URL+'/auth/v1/token?grant_type=password',{method:'POST',headers:{apikey:KEY,'Content-Type':'application/json'},body:JSON.stringify(x)});const j=await r.json();if(!r.ok){m.textContent='로그인 정보를 확인해 주세요.';return}localStorage.setItem('ob_admin_token',j.access_token);location.href='/admin/board';});
+</script></Layout>
