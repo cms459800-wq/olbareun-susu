@@ -165,3 +165,9 @@ a,button{-webkit-tap-highlight-color:transparent}
 @keyframes chatScroll{0%,32%{transform:translateY(0)}42%,52%{transform:translateY(-42px)}60%,69%{transform:translateY(-105px)}76%,88%{transform:translateY(-190px)}96%,100%{transform:translateY(0)}}
 @media(max-width:800px){@keyframes chatScroll{0%,32%{transform:translateY(0)}42%,52%{transform:translateY(-35px)}60%,69%{transform:translateY(-88px)}76%,88%{transform:translateY(-165px)}96%,100%{transform:translateY(0)}}}
 @media(prefers-reduced-motion:reduce){.chat-stream{animation:none!important}}
+
+
+/* Expanded estimate message */
+.quote-bubble>p{margin:7px 0 10px;padding-top:7px;border-top:1px solid #dcebf4;color:#244b66;font-size:9px;font-weight:800;line-height:1.55}
+@keyframes chatScroll{0%,27%{transform:translateY(0)}36%,46%{transform:translateY(-58px)}53%,63%{transform:translateY(-125px)}70%,88%{transform:translateY(-230px)}96%,100%{transform:translateY(0)}}
+@media(max-width:800px){@keyframes chatScroll{0%,27%{transform:translateY(0)}36%,46%{transform:translateY(-48px)}53%,63%{transform:translateY(-108px)}70%,88%{transform:translateY(-205px)}96%,100%{transform:translateY(0)}}}
