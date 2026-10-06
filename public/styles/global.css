@@ -171,3 +171,23 @@ a,button{-webkit-tap-highlight-color:transparent}
 .quote-bubble>p{margin:7px 0 10px;padding-top:7px;border-top:1px solid #dcebf4;color:#244b66;font-size:9px;font-weight:800;line-height:1.55}
 @keyframes chatScroll{0%,27%{transform:translateY(0)}36%,46%{transform:translateY(-58px)}53%,63%{transform:translateY(-125px)}70%,88%{transform:translateY(-230px)}96%,100%{transform:translateY(0)}}
 @media(max-width:800px){@keyframes chatScroll{0%,27%{transform:translateY(0)}36%,46%{transform:translateY(-48px)}53%,63%{transform:translateY(-108px)}70%,88%{transform:translateY(-205px)}96%,100%{transform:translateY(0)}}}
+
+
+/* Six-scene consultation showcase */
+.multi-chat{position:relative;overflow:hidden!important}
+.multi-chat .scene{position:absolute;inset:12px 13px 48px;opacity:0;transform:translateX(18px);animation:sceneCycle 54s ease-in-out infinite}
+.multi-chat .scene .chat-row{opacity:0;transform:translateY(12px);animation:sceneMessage 9s ease-out infinite}
+.multi-chat .scene .chat-row:nth-of-type(2){animation-delay:.7s}.multi-chat .scene .chat-row:nth-of-type(3){animation-delay:1.7s}.multi-chat .scene .chat-row:nth-of-type(4){animation-delay:2.8s}
+.multi-chat .scene-1{animation-delay:0s}.multi-chat .scene-2{animation-delay:9s}.multi-chat .scene-3{animation-delay:18s}.multi-chat .scene-4{animation-delay:27s}.multi-chat .scene-5{animation-delay:36s}.multi-chat .scene-6{animation-delay:45s}
+.multi-chat .scene-2 .chat-row{animation-delay:.7s}.multi-chat .scene-2 .chat-row:nth-of-type(3){animation-delay:1.7s}.multi-chat .scene-2 .chat-row:nth-of-type(4){animation-delay:2.8s}
+.multi-chat .scene-3 .chat-row{animation-delay:.7s}.multi-chat .scene-3 .chat-row:nth-of-type(3){animation-delay:1.7s}.multi-chat .scene-3 .chat-row:nth-of-type(4){animation-delay:2.8s}
+.multi-chat .scene-4 .chat-row{animation-delay:.7s}.multi-chat .scene-4 .chat-row:nth-of-type(3){animation-delay:1.7s}.multi-chat .scene-4 .chat-row:nth-of-type(4){animation-delay:2.8s}
+.multi-chat .scene-5 .chat-row{animation-delay:.7s}.multi-chat .scene-5 .chat-row:nth-of-type(3){animation-delay:1.7s}.multi-chat .scene-5 .chat-row:nth-of-type(4){animation-delay:2.8s}
+.multi-chat .scene-6 .chat-row{animation-delay:.7s}.multi-chat .scene-6 .chat-row:nth-of-type(3){animation-delay:1.7s}.multi-chat .scene-6 .chat-row:nth-of-type(4){animation-delay:2.8s}
+.multi-chat .quote-bubble{box-shadow:0 8px 20px rgba(10,73,113,.1)}
+.multi-chat .quote-bubble>strong{font-size:25px}
+.scene-kakao{position:absolute;z-index:30;left:50%;bottom:9px;transform:translateX(-50%);width:calc(100% - 28px);padding:8px 12px;border-radius:9px;background:#0a70b5;color:#fff;text-align:center;font-size:9px;font-weight:900;box-shadow:0 5px 15px rgba(5,72,114,.16)}
+@keyframes sceneCycle{0%,1%{opacity:0;transform:translateX(18px)}3%,14%{opacity:1;transform:translateX(0)}16%,100%{opacity:0;transform:translateX(-14px)}}
+@keyframes sceneMessage{0%,7%{opacity:0;transform:translateY(14px)}15%,75%{opacity:1;transform:translateY(0)}88%,100%{opacity:1;transform:translateY(-28px)}}
+@media(max-width:800px){.multi-chat .scene{inset:9px 9px 46px}.multi-chat .quote-bubble>strong{font-size:22px}.scene-kakao{bottom:7px}}
+@media(prefers-reduced-motion:reduce){.multi-chat .scene{display:none;animation:none!important}.multi-chat .scene-1{display:block;opacity:1;transform:none}.multi-chat .scene .chat-row{opacity:1;transform:none;animation:none!important}}
