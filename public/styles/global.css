@@ -151,3 +151,17 @@ a,button{-webkit-tap-highlight-color:transparent}
   .hero-chat{min-height:485px}
   .chat-phone{height:465px}
 }
+
+
+/* Scrolling chat and estimate reveal */
+.chat-body{overflow:hidden!important}
+.chat-stream{will-change:transform;animation:chatScroll 14s ease-in-out infinite}
+.chat-1{animation-delay:0s}.chat-2{animation-delay:.8s}.chat-3{animation-delay:1.8s}.chat-4{animation-delay:2.8s}.chat-5{animation-delay:3.8s}.chat-6{animation-delay:4.8s}.chat-7{animation-delay:6s}
+.quote-bubble{min-width:215px;padding:13px!important;border:1px solid #c9e3f3;background:linear-gradient(145deg,#fff,#f3fbff)!important}
+.quote-bubble>span{display:block;color:#587386;font-size:9px;font-weight:700}
+.quote-bubble>strong{display:block;margin:3px 0 4px;color:#086ba9;font-size:24px;letter-spacing:-1px}
+.quote-bubble>small{display:block;margin-bottom:10px;color:#7a8d9c;font-size:7px;line-height:1.5}
+.quote-bubble>a{display:block;padding:8px;border-radius:7px;background:#0a70b5;color:#fff;text-align:center;font-size:9px;font-weight:800}
+@keyframes chatScroll{0%,32%{transform:translateY(0)}42%,52%{transform:translateY(-42px)}60%,69%{transform:translateY(-105px)}76%,88%{transform:translateY(-190px)}96%,100%{transform:translateY(0)}}
+@media(max-width:800px){@keyframes chatScroll{0%,32%{transform:translateY(0)}42%,52%{transform:translateY(-35px)}60%,69%{transform:translateY(-88px)}76%,88%{transform:translateY(-165px)}96%,100%{transform:translateY(0)}}}
+@media(prefers-reduced-motion:reduce){.chat-stream{animation:none!important}}
