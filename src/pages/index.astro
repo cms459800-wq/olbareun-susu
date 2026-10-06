@@ -28,6 +28,7 @@ const homeFaqJson={'@context':'https://schema.org','@type':'FAQPage',mainEntity:
 {'@type':'Question',name:'사무실·상가·창고처럼 물량이 많아도 되나요?',acceptedAnswer:{'@type':'Answer',text:'전체 물량이 보이는 사진과 주요 품목의 대략적인 수량, 차량 진입 가능 여부를 알려주세요.'}},
 {'@type':'Question',name:'문의할 때 어떤 정보를 준비하면 되나요?',acceptedAnswer:{'@type':'Answer',text:'수거할 물품 사진, 대략적인 수량, 층수·엘리베이터 여부, 차량 접근 가능 여부를 준비하면 좋습니다.'}}
 ]};
+const serviceImages=["아파트-폐기물-정리-작업-현장.webp","대형-폐기물-수거-현장.webp","컴퓨터-전자폐기물-수거-현장.webp","사무실-이전을-준비하는-현장.webp","매장-철거-폐기물-정리-현장.webp","아파트-앞-이삿짐-운반-현장.webp","창고-정리와-분류-작업-현장.webp","소파를-옮기는-이사-작업-현장-_1_.webp"];
 ---
 <Layout>
 <header class="main-header"><a class="brand" href="/" aria-label="올바른수거 홈"><img class="brand-logo" src="/images/logo.png" alt="올바른수거" width="320" height="100" /></a><nav class="desktop-nav"><a href="#services">수거품목</a><a href="#steps">수거방법</a><a href="#areas">부산지역</a><a href="#cases">상담예시</a><a href="#faq">FAQ</a></nav><a class="header-call" href="tel:01066484886">☎ 010-6648-4886</a><button class="menu" type="button" aria-label="전체 메뉴 열기" aria-expanded="false">☰</button></header>
@@ -56,7 +57,7 @@ const homeFaqJson={'@context':'https://schema.org','@type':'FAQPage',mainEntity:
 </div></section>
 <section class="quick-proof"><div><b>사진으로 먼저 확인</b><span>물품 전체와 수량이 보이게 촬영</span></div><div><b>현장조건 함께 확인</b><span>층수·엘리베이터·차량 접근 여부</span></div><div><b>부산 지역별 안내</b><span>구·군과 주요 동네별 수거 정보</span></div><div><b>다량 물품 상담</b><span>사무실·상가·사업장·창고 정리</span></div></section>
 <section class="section consult-guide"><div class="section-head"><div><p class="eyebrow-local">PHOTO CONSULT</p><h2>사진 상담, 이렇게 보내주세요</h2><p>처음 문의할 때 아래 4가지만 확인하면 상담이 훨씬 간단해집니다.</p></div></div><div class="consult-grid"><article><b>01</b><strong>전체 사진</strong><p>수거할 물품이 한눈에 보이도록 전체 모습을 촬영해 주세요.</p></article><article><b>02</b><strong>품목·수량</strong><p>가구, 가전, 사무집기 등 종류와 대략적인 개수를 알려주세요.</p></article><article><b>03</b><strong>건물 조건</strong><p>층수와 엘리베이터 사용 가능 여부를 함께 알려주세요.</p></article><article><b>04</b><strong>차량 접근</strong><p>건물 앞 정차나 주차 가능 여부를 알려주시면 확인에 도움이 됩니다.</p></article></div></section>
-<section id="services" class="section"><div class="section-head"><div><h2>수거 가능 품목</h2><p>가정부터 사업장까지 다양한 폐기물을 상담합니다.</p></div><a href="#contact">전체보기 →</a></div><div class="service-grid">{services.map(([name,desc],i)=><article class="service-card"><div class="image-placeholder card-img"><span>이미지 {String(i+1).padStart(2,'0')}</span></div><h3>{name}</h3><p>{desc}</p></article>)}</div></section>
+<section id="services" class="section"><div class="section-head"><div><h2>수거 가능 품목</h2><p>가정부터 사업장까지 다양한 폐기물을 상담합니다.</p></div><a href="#contact">전체보기 →</a></div><div class="service-grid">{services.map(([name,desc],i)=><article class="service-card"><div class="service-card-image"><img src={'/images/items/'+serviceImages[i]} alt={name+' 현장 이미지'} loading="lazy" /></div><h3>{name}</h3><p>{desc}</p></article>)}</div></section>
 <section class="section estimate-calculator" id="estimate-calculator">
   <div class="estimate-head"><span>QUICK ESTIMATE</span><h2>내 상황에 맞는 <em>예상 수거비용</em>을 확인해보세요</h2><p>아래 항목을 차례로 선택하면 참고용 예상금액을 바로 확인할 수 있습니다.</p></div>
   <div class="estimate-panel">
