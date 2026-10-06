@@ -227,3 +227,10 @@ a,button{-webkit-tap-highlight-color:transparent}
 .price-card-image img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
 .price-showcase-grid article:hover .price-card-image img{transform:scale(1.035)}
 @media(max-width:800px){.price-card-image{height:115px}}
+
+
+/* Uploaded service item images */
+.service-card-image{height:180px;overflow:hidden;border-radius:14px;background:#e8f2f8}
+.service-card-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .35s ease}
+.service-card:hover .service-card-image img{transform:scale(1.035)}
+@media(max-width:800px){.service-card-image{height:130px}}
