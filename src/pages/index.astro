@@ -57,6 +57,37 @@ const homeFaqJson={'@context':'https://schema.org','@type':'FAQPage',mainEntity:
 <section class="quick-proof"><div><b>사진으로 먼저 확인</b><span>물품 전체와 수량이 보이게 촬영</span></div><div><b>현장조건 함께 확인</b><span>층수·엘리베이터·차량 접근 여부</span></div><div><b>부산 지역별 안내</b><span>구·군과 주요 동네별 수거 정보</span></div><div><b>다량 물품 상담</b><span>사무실·상가·사업장·창고 정리</span></div></section>
 <section class="section consult-guide"><div class="section-head"><div><p class="eyebrow-local">PHOTO CONSULT</p><h2>사진 상담, 이렇게 보내주세요</h2><p>처음 문의할 때 아래 4가지만 확인하면 상담이 훨씬 간단해집니다.</p></div></div><div class="consult-grid"><article><b>01</b><strong>전체 사진</strong><p>수거할 물품이 한눈에 보이도록 전체 모습을 촬영해 주세요.</p></article><article><b>02</b><strong>품목·수량</strong><p>가구, 가전, 사무집기 등 종류와 대략적인 개수를 알려주세요.</p></article><article><b>03</b><strong>건물 조건</strong><p>층수와 엘리베이터 사용 가능 여부를 함께 알려주세요.</p></article><article><b>04</b><strong>차량 접근</strong><p>건물 앞 정차나 주차 가능 여부를 알려주시면 확인에 도움이 됩니다.</p></article></div></section>
 <section id="services" class="section"><div class="section-head"><div><h2>수거 가능 품목</h2><p>가정부터 사업장까지 다양한 폐기물을 상담합니다.</p></div><a href="#contact">전체보기 →</a></div><div class="service-grid">{services.map(([name,desc],i)=><article class="service-card"><div class="image-placeholder card-img"><span>이미지 {String(i+1).padStart(2,'0')}</span></div><h3>{name}</h3><p>{desc}</p></article>)}</div></section>
+<section class="section estimate-calculator" id="estimate-calculator">
+  <div class="estimate-head"><span>QUICK ESTIMATE</span><h2>내 상황에 맞는 <em>예상 수거비용</em>을 확인해보세요</h2><p>아래 항목을 차례로 선택하면 참고용 예상금액을 바로 확인할 수 있습니다.</p></div>
+  <div class="estimate-panel">
+    <div class="estimate-step"><div class="estimate-step-title"><b>01</b><div><small>수거 규모</small><h3>차량·물량을 선택해 주세요</h3></div></div><div class="estimate-options" data-group="volume">
+      <button type="button" class="estimate-option active" data-price="50000"><span>🧺</span><b>소량 수거</b><small>5만원~</small></button>
+      <button type="button" class="estimate-option" data-price="200000"><span>🛻</span><b>0.5톤 내외</b><small>20만원~</small></button>
+      <button type="button" class="estimate-option" data-price="400000"><span>🚚</span><b>1톤 차량</b><small>40만원~</small></button>
+      <button type="button" class="estimate-option" data-price="700000"><span>🚛</span><b>대량 수거</b><small>70만원~</small></button>
+      <button type="button" class="estimate-option" data-price="1200000"><span>🏭</span><b>사업장 대량</b><small>120만원~</small></button>
+    </div></div>
+    <div class="estimate-step"><div class="estimate-step-title"><b>02</b><div><small>폐기물 종류</small><h3>가장 가까운 유형을 골라주세요</h3></div></div><div class="estimate-options" data-group="type">
+      <button type="button" class="estimate-option active" data-price="0"><span>🛋️</span><b>가구·생활</b><small>기본</small></button>
+      <button type="button" class="estimate-option" data-price="30000"><span>🧊</span><b>냉장고·쇼케이스</b><small>+3만원~</small></button>
+      <button type="button" class="estimate-option" data-price="20000"><span>💻</span><b>폐컴퓨터·사무집기</b><small>+2만원~</small></button>
+      <button type="button" class="estimate-option" data-price="50000"><span>🧱</span><b>철거 잔재물</b><small>+5만원~</small></button>
+      <button type="button" class="estimate-option" data-price="100000"><span>🏗️</span><b>사업장 폐기물</b><small>+10만원~</small></button>
+    </div></div>
+    <div class="estimate-step"><div class="estimate-step-title"><b>03</b><div><small>현장 접근</small><h3>운반 조건을 알려주세요</h3></div></div><div class="estimate-options" data-group="access">
+      <button type="button" class="estimate-option active" data-price="0"><span>🟢</span><b>1층·차량 접근</b><small>추가 없음</small></button>
+      <button type="button" class="estimate-option" data-price="30000"><span>🛗</span><b>엘리베이터 있음</b><small>+3만원~</small></button>
+      <button type="button" class="estimate-option" data-price="70000"><span>🪜</span><b>계단 운반</b><small>+7만원~</small></button>
+      <button type="button" class="estimate-option" data-price="100000"><span>📍</span><b>차량 접근 어려움</b><small>+10만원~</small></button>
+    </div></div>
+    <div class="estimate-step"><div class="estimate-step-title"><b>04</b><div><small>추가 장비</small><h3>사다리차가 필요한가요?</h3></div></div><div class="estimate-options compact" data-group="ladder">
+      <button type="button" class="estimate-option active" data-price="0"><span>✓</span><b>필요 없음</b></button>
+      <button type="button" class="estimate-option" data-price="150000"><span>🏗️</span><b>사다리차 필요</b><small>+15만원~</small></button>
+      <button type="button" class="estimate-option" data-price="0"><span>?</span><b>현장 확인 필요</b></button>
+    </div></div>
+  </div>
+  <div class="estimate-result"><div><small>선택 조건 기준 예상금액</small><strong id="estimate-price">50,000원~</strong><p>참고용 계산 결과이며 실제 비용은 사진·물량·현장 조건 확인 후 안내됩니다.</p></div><div class="estimate-result-actions"><a href="http://qr.kakao.com/talk/xiB5oLU91AZmWwLV9g5AwwM4O5I-" target="_blank" rel="noopener noreferrer">💬 사진으로 정확한 견적받기</a><a href="tel:01066484886">☎ 전화 상담</a></div></div>
+</section>
 <section class="section cost-guide"><div class="section-head"><div><p class="eyebrow-local">COST GUIDE</p><h2>수거 비용은 무엇으로 결정될까요?</h2><p>정확한 비용은 물품과 현장 조건을 확인한 뒤 안내합니다.</p></div></div><div class="cost-grid"><article><span>01</span><h3>품목 종류</h3><p>가구, 가전, 사무집기, 상가 집기 등 물품 종류를 확인합니다.</p></article><article><span>02</span><h3>수량·부피</h3><p>한두 개의 대형 물품인지 여러 품목이 섞인 대량 정리인지 확인합니다.</p></article><article><span>03</span><h3>이동 조건</h3><p>층수, 엘리베이터, 계단과 출입구 등 실제 이동 여건을 확인합니다.</p></article><article><span>04</span><h3>차량 접근</h3><p>현장 앞 정차·주차와 상차 공간 등 차량 접근 조건을 확인합니다.</p></article></div><div class="cost-note"><strong>사진 상담 TIP</strong><p>전체 물량 사진 + 큰 물품 개별 사진 + 층수/엘리베이터 정보를 함께 보내면 상담이 더 정확해집니다.</p><a href="#contact">사진으로 상담하기 →</a></div></section>
 <section class="section price-showcase">
   <div class="price-showcase-head"><span>OLBAREUN COST GUIDE</span><h2>폐기물 수거 <em>예상 비용 안내</em></h2><p>품목의 종류와 물량, 작업 환경에 따라 실제 상담 금액은 달라질 수 있습니다.</p></div>
@@ -89,5 +120,10 @@ menuBtn?.addEventListener('click',()=>setMenu(true));
 menuClose?.addEventListener('click',()=>setMenu(false));
 menuDim?.addEventListener('click',()=>setMenu(false));
 menuPanel?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+const estimateGroups=[...document.querySelectorAll('.estimate-options')];
+const estimatePrice=document.querySelector('#estimate-price');
+const updateEstimate=()=>{const total=estimateGroups.reduce((sum,g)=>sum+Number(g.querySelector('.estimate-option.active')?.dataset.price||0),0);if(estimatePrice)estimatePrice.textContent=total.toLocaleString('ko-KR')+'원~';};
+estimateGroups.forEach(group=>group.querySelectorAll('.estimate-option').forEach(btn=>btn.addEventListener('click',()=>{group.querySelectorAll('.estimate-option').forEach(x=>x.classList.remove('active'));btn.classList.add('active');updateEstimate();})));
+updateEstimate();
 </script>
 </Layout>
