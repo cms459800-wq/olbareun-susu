@@ -85,7 +85,7 @@ const districtFaq={'@context':'https://schema.org','@type':'FAQPage',mainEntity:
 ]};
 ---
 <Layout title={area+' 폐기물수거 | '+data.focus+' | 올바른수거'} description={'부산 '+area+' 폐기물수거 상담. '+intro}>
-<header class="local-header"><a class="brand" href="/"><span class="logo">🚚</span><span><b>올바른수거</b><small>부산 폐기물·불용품 수거 전문</small></span></a><a href="/" class="back">← 부산 전체지역</a><a class="header-call" href="tel:01066484886">☎ 010-6648-4886</a></header>
+<header class="local-header"><a class="brand" href="/" aria-label="올바른수거 홈"><img class="brand-logo" src="/images/logo.png" alt="올바른수거" width="320" height="100" /></a><a href="/" class="back">← 부산 전체지역</a><a class="header-call" href="tel:01066484886">☎ 010-6648-4886</a></header>
 <main>
 <section class="area-hero district-hero"><div><p class="district-kicker">BUSAN · {area} COLLECTION GUIDE</p><h1>{area} 폐기물수거<br><em>{data.focus}</em></h1><p>{intro}</p><div class="district-facts"><span>사진으로 물품 확인</span><span>현장 이동조건 확인</span><span>{area} 지역별 안내</span></div><div class="actions"><a class="primary" href="#area-contact">사진으로 수거 상담</a><a class="secondary" href="tel:01066484886">☎ 전화 상담</a></div></div><div class="image-placeholder area-main-image"><strong>{area} 수거 안내 이미지</strong><span>지역 현장 WebP 이미지 교체 예정</span></div></section>
 <section class="section local-intro"><p class="eyebrow-local">LOCAL GUIDE · {area}</p><h2>{area} 현장에 맞춘 수거 안내</h2><p>{intro}</p><div class="type-chips">{types.map(t=><span>{t}</span>)}</div></section>
