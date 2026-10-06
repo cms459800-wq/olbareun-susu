@@ -292,3 +292,9 @@ a,button{-webkit-tap-highlight-color:transparent}
   .mobile-bar a:last-child{background:linear-gradient(135deg,#fee500,#ffd51b);color:#2b2600}
   .mobile-bar a:active{transform:scale(.97);filter:brightness(.97)}
 }
+
+/* District hero consultation phone */
+.district-hero .district-chat{position:relative;align-self:center;justify-self:center;width:min(100%,480px)}
+.district-chat-label{position:absolute;z-index:8;top:-18px;left:50%;transform:translateX(-50%);padding:9px 18px;border-radius:999px;background:#fff;color:#086ca9;font-size:13px;font-weight:900;box-shadow:0 8px 24px rgba(5,42,75,.16);white-space:nowrap}
+.district-hero .district-chat .chat-float{display:none}
+@media(max-width:800px){.district-hero .district-chat{margin:38px auto 4px;width:min(100%,390px)}.district-chat-label{top:-14px;font-size:12px;padding:8px 15px}}
