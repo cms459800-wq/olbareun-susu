@@ -191,3 +191,13 @@ a,button{-webkit-tap-highlight-color:transparent}
 @keyframes sceneMessage{0%,7%{opacity:0;transform:translateY(14px)}15%,75%{opacity:1;transform:translateY(0)}88%,100%{opacity:1;transform:translateY(-28px)}}
 @media(max-width:800px){.multi-chat .scene{inset:9px 9px 46px}.multi-chat .quote-bubble>strong{font-size:22px}.scene-kakao{bottom:7px}}
 @media(prefers-reduced-motion:reduce){.multi-chat .scene{display:none;animation:none!important}.multi-chat .scene-1{display:block;opacity:1;transform:none}.multi-chat .scene .chat-row{opacity:1;transform:none;animation:none!important}}
+
+
+/* Photo attachment messages in animated chat */
+.chat-photo-msg{display:flex;align-items:center;gap:9px;width:205px;padding:7px;border-radius:13px 4px 13px 13px;background:#ffe36d;color:#263b4c;box-shadow:0 3px 9px rgba(31,66,92,.07)}
+.chat-photo-msg .photo-preview{position:relative;display:flex;align-items:center;justify-content:center;flex:0 0 54px;height:48px;overflow:hidden;border-radius:8px;background:linear-gradient(145deg,#dce9ef,#b9d3df);color:#46758c;font-size:8px;font-weight:900}
+.chat-photo-msg .photo-preview:before{content:"";position:absolute;width:18px;height:13px;left:7px;bottom:7px;background:#82adbe;clip-path:polygon(0 100%,45% 20%,68% 62%,82% 42%,100% 100%)}
+.chat-photo-msg .photo-preview:after{content:"";position:absolute;width:7px;height:7px;right:8px;top:8px;border-radius:50%;background:#f8fbfd}
+.chat-photo-msg>div:last-child{display:flex;min-width:0;flex-direction:column;gap:3px}.chat-photo-msg b{font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.chat-photo-msg small{font-size:8px;opacity:.65}
+.multi-chat .scene .chat-row:nth-of-type(3){animation-delay:1.35s}.multi-chat .scene .chat-row:nth-of-type(4){animation-delay:2.1s}.multi-chat .scene .chat-row:nth-of-type(5){animation-delay:3.1s}
+@media(max-width:800px){.chat-photo-msg{width:188px}.chat-photo-msg .photo-preview{flex-basis:48px;height:43px}}
