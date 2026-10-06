@@ -142,3 +142,12 @@ a,button{-webkit-tap-highlight-color:transparent}
 .phone-button{position:absolute;display:block;background:#263b4b;border-radius:3px 0 0 3px;box-shadow:inset 1px 0 rgba(255,255,255,.2)}
 .phone-button-a{left:-4px;top:92px;width:4px;height:28px}.phone-button-b{left:-4px;top:132px;width:4px;height:48px}.phone-button-c{right:-4px;top:120px;width:4px;height:67px;border-radius:0 3px 3px 0}
 @media(max-width:800px){.phone-screen{border-radius:19px}.phone-status{height:27px}.dynamic-island{width:68px;height:17px}.phone-screen .chat-head{height:57px}.phone-screen .chat-body{height:calc(100% - 84px)}.home-indicator{width:92px}}
+
+
+/* Taller hero smartphone */
+.hero-chat{min-height:550px}
+.chat-phone{height:520px}
+@media(max-width:800px){
+  .hero-chat{min-height:485px}
+  .chat-phone{height:465px}
+}
