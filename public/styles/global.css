@@ -334,3 +334,14 @@ a,button{-webkit-tap-highlight-color:transparent}
 .area-case-controls button{width:36px;height:36px;border:1px solid #d7e3eb;border-radius:50%;background:#fff;color:#0b5f98;font-size:24px;line-height:1;cursor:pointer}
 .area-case-controls span{min-width:55px;text-align:center;color:#718395;font-size:11px}.area-case-controls b{color:#0876bb;font-size:13px}
 @media(max-width:800px){.area-case-showcase{padding:32px 16px 22px}.area-case-card{flex-basis:82%}.area-case-card img{aspect-ratio:1.35/1}.area-case-card p{min-height:auto}.area-case-controls{margin-top:1px}}
+
+/* Compact mobile keyword carousel */
+@media(max-width:800px){
+ .area-keywords{padding-left:16px;padding-right:16px}
+ .area-keyword-cards{gap:9px;padding:10px;border-radius:15px}
+ .area-keyword-cards figure{flex:0 0 46%;max-width:180px;border-radius:11px}
+ .area-keyword-cards img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+}
+@media(max-width:430px){
+ .area-keyword-cards figure{flex-basis:44%;max-width:160px}
+}
