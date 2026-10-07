@@ -109,17 +109,17 @@ const districtFaq={'@context':'https://schema.org','@type':'FAQPage',mainEntity:
   <div class="chat-float chat-float-b">부산 전지역 상담</div>
 </div></section>
 <section class="area-case-showcase"><div class="area-case-head"><p class="eyebrow-local">COLLECTION CASE · {area}</p><h2>{area} 폐기물 수거 현장 사례</h2><p>가정부터 상가·사무실·창고까지 현장 유형별 수거 사례를 확인해 보세요.</p></div><div class="area-case-slider" data-area-case-slider>{[
-['가정집 가구·생활폐기물 정리','가구와 생활폐기물을 현장 여건에 맞춰 분류·수거합니다.'],
-['상가·매장 폐기물 수거','폐업·리뉴얼 후 남은 집기와 불용품을 정리합니다.'],
-['사무실 이전 후 집기 정리','책상·의자·서랍장 등 사무집기 수거를 상담합니다.'],
-['창고 적치물·불용품 정리','창고에 장기간 보관된 물품을 수량별로 상담합니다.'],
-['폐컴퓨터·전산장비 수거','PC·모니터 등 전산장비 수거 가능 여부를 확인합니다.'],
-['이사 후 잔여 폐기물 정리','이사 과정에서 남은 가구와 생활용품을 정리합니다.'],
-['대형 가구·매트리스 수거','부피가 큰 가구류의 반출 조건을 확인해 상담합니다.'],
-['매장 집기·진열대 정리','진열대와 매장 집기 등 불용품 수거를 상담합니다.'],
-['사업장 대량 폐기물 정리','사업장 물량과 차량 진입 조건에 맞춰 상담합니다.'],
-['복합 폐기물 현장 정리','여러 품목이 섞인 현장은 사진 확인 후 안내합니다.']
-].map((item,i)=><article class="area-case-card"><img src={'/images/area-cases/case-'+String(i+1).padStart(2,'0')+'.webp'} alt={area+' '+item[0]} loading="lazy" /><div><strong>{area} {item[0]}</strong><p>{item[1]}</p><span>사진 상담 가능 →</span></div></article>)}</div><div class="area-case-controls"><button type="button" data-case-prev aria-label="이전 사례">‹</button><span><b data-case-current>1</b> / 10</span><button type="button" data-case-next aria-label="다음 사례">›</button></div></section><section class="section local-intro"><p class="eyebrow-local">LOCAL GUIDE · {area}</p><h2>{area} 현장에 맞춘 수거 안내</h2><p>{intro}</p><div class="type-chips">{types.map(t=><span>{t}</span>)}</div></section>
+['가정집 가구·생활폐기물 정리','가구와 생활폐기물을 현장 여건에 맞춰 분류·수거합니다.','07.webp'],
+['상가·매장 폐기물 수거','폐업·리뉴얼 후 남은 집기와 불용품을 정리합니다.','02.webp'],
+['사무실 이전 후 집기 정리','책상·의자·서랍장 등 사무집기 수거를 상담합니다.','08.webp'],
+['창고 적치물·불용품 정리','창고에 장기간 보관된 물품을 수량별로 상담합니다.','09.webp'],
+['폐컴퓨터·전산장비 수거','PC·모니터 등 전산장비 수거 가능 여부를 확인합니다.','10.webp'],
+['이사 후 잔여 폐기물 정리','이사 과정에서 남은 가구와 생활용품을 정리합니다.','04.webp'],
+['대형 가구·매트리스 수거','부피가 큰 가구류의 반출 조건을 확인해 상담합니다.','03.webp'],
+['매장 집기·진열대 정리','진열대와 매장 집기 등 불용품 수거를 상담합니다.','05.webp'],
+['사업장 대량 폐기물 정리','사업장 물량과 차량 진입 조건에 맞춰 상담합니다.','01.webp'],
+['복합 폐기물 현장 정리','여러 품목이 섞인 현장은 사진 확인 후 안내합니다.','06.webp']
+].map((item)=><article class="area-case-card"><img src={'/images/area-cases/'+item[2]} alt={area+' '+item[0]} loading="lazy" /><div><strong>{area} {item[0]}</strong><p>{item[1]}</p><span>사진 상담 가능 →</span></div></article>)}</div><div class="area-case-controls"><button type="button" data-case-prev aria-label="이전 사례">‹</button><span><b data-case-current>1</b> / 10</span><button type="button" data-case-next aria-label="다음 사례">›</button></div></section><section class="section local-intro"><p class="eyebrow-local">LOCAL GUIDE · {area}</p><h2>{area} 현장에 맞춘 수거 안내</h2><p>{intro}</p><div class="type-chips">{types.map(t=><span>{t}</span>)}</div></section>
 \n<section class="section"><div class="section-head"><div><p class="eyebrow-local">SERVICE GUIDE</p><h2>{area} 주요 수거 서비스</h2><p>{guide.service}</p></div></div><div class="keyword-grid">{types.map((t,i)=><article><span>0{i+1}</span><strong>{area} {t}</strong><p>{guide.situations[i]}</p></article>)}</div></section>
 <section class="section home-board district-board"><div class="section-head"><div><p class="eyebrow-local">CUSTOMER CENTER</p><h2>{area} 공지사항 · 수거 문의</h2><p>새로운 안내를 확인하거나 수거 관련 내용을 비밀글로 남겨주세요.</p></div></div><div class="home-board-grid"><article class="home-board-card"><div class="home-board-head"><div><span>NOTICE</span><h3>공지사항</h3></div><a href="/notice" aria-label="공지사항 전체보기">＋</a></div><div class="home-board-list" data-district-notices><p class="home-board-loading">불러오는 중입니다.</p></div><a class="home-board-more" href="/notice">공지사항 전체보기 <b>→</b></a></article><article class="home-board-card"><div class="home-board-head"><div><span>PRIVATE REQUEST</span><h3>수거 문의</h3></div><a href="/inquiry" aria-label="수거 문의 전체보기">＋</a></div><div class="home-board-list" data-district-inquiries><p class="home-board-loading">불러오는 중입니다.</p></div><div class="home-board-actions"><a class="home-board-more" href="/inquiry">1:1 문의 게시판 <b>→</b></a><a class="home-board-write" href="/inquiry/write">문의하기</a></div></article></div></section><section class="section local-places district-places"><p class="eyebrow-local">LOCAL AREA</p><h2>{area} 동네별 상담 안내</h2><p>{data.places.join(' · ')} 등 세부지역의 물품 유형과 상담 준비정보를 확인해 보세요.</p><div>{data.places.map(p=>{const match=linkedPlaces.find(([name])=>name===p);return match?<a class="place-link" href={'/busan/local/'+match[1]}><small>{area}</small><b>{p} 수거 안내</b><em>상세 보기 →</em></a>:<span class="place-pending"><small>{area}</small><b>{p} 지역 안내</b><em>상담 가능</em></span>})}</div></section>
 
