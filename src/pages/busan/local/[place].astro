@@ -342,7 +342,7 @@ const faqJson={'@context':'https://schema.org','@type':'FAQPage',mainEntity:[
 {'@type':'Question',name:'사진 상담 시 무엇을 보내면 좋나요?',acceptedAnswer:{'@type':'Answer',text:profile.point}}
 ]};
 ---
-<Layout title={profile.title} description={metaDescription}>
+<Layout title={profile.title+" | 올바른수거"} description={metaDescription}>
 <header class="local-header"><a class="brand" href="/" aria-label="올바른수거 홈"><img class="brand-logo" src="/images/logo.png" alt="올바른수거" width="320" height="100" /></a><nav class="breadcrumb" aria-label="현재 위치"><a href="/">부산</a><span>›</span><a href={'/busan/'+({'중구':'jung-gu','서구':'seo-gu','동구':'dong-gu','영도구':'yeongdo-gu','부산진구':'busanjin-gu','동래구':'dongnae-gu','남구':'nam-gu','북구':'buk-gu','해운대구':'haeundae-gu','사하구':'saha-gu','금정구':'geumjeong-gu','강서구':'gangseo-gu','연제구':'yeonje-gu','수영구':'suyeong-gu','사상구':'sasang-gu','기장군':'gijang-gun'}[data.district])}>{data.district}</a><span>›</span><strong>{data.name}</strong></nav><a class="header-call" href="tel:01066484886">☎ 010-6648-4886</a></header>
 <main>
 <section class="place-hero"><div><p>{data.district} · {data.name}</p><h1>{data.name} 폐기물수거</h1><p class="hero-focus">{data.focus}</p><p>{profile.lead}</p><div class="actions"><a class="primary" href="#place-contact">{cta.button}</a><a class="secondary" href="tel:01066484886">전화 상담</a></div></div><div class="area-main-image local-photo"><img src={"/images/area-cases/"+exampleImages[0]} alt={data.name+" "+intentLabel+" 안내 이미지"} width="760" height="570" loading="eager" decoding="async" /><span>수거 유형 안내 이미지 · 실제 작업 사례와 다를 수 있습니다</span></div></section>
