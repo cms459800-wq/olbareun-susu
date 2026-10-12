@@ -76,8 +76,8 @@ const districtInsights={
 const districtInsight=districtInsights[area];
 const guide=guideProfiles[areaKinds[area]??'home'];
 const districtBreadcrumb={'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[
-{'@type':'ListItem',position:1,name:'부산 폐기물수거'},
-{'@type':'ListItem',position:2,name:area}
+{'@type':'ListItem',position:1,name:'부산 폐기물수거',item:new URL('/',Astro.site??Astro.url).href},
+{'@type':'ListItem',position:2,name:area,item:new URL(Astro.url.pathname,Astro.site??Astro.url).href}
 ]};
 const districtFaq={'@context':'https://schema.org','@type':'FAQPage',mainEntity:[
 ...guide.faq.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}})),
