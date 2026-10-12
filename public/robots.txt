@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /inquiry/view
+Disallow: /inquiry/write
 
-# Sitemap URL will be added after the production domain is connected.
+Sitemap: https://www.올바른.kr/sitemap-index.xml
