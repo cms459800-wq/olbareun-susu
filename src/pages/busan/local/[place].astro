@@ -333,9 +333,9 @@ const related=(relatedGroups[data.district]??[]).filter(([,slug])=>slug!==data.s
 const breadcrumbJson={
 '@context':'https://schema.org','@type':'BreadcrumbList',
 itemListElement:[
-{'@type':'ListItem',position:1,name:'부산 폐기물수거'},
-{'@type':'ListItem',position:2,name:data.district},
-{'@type':'ListItem',position:3,name:data.name}
+{'@type':'ListItem',position:1,name:'부산 폐기물수거',item:new URL('/',Astro.site??Astro.url).href},
+{'@type':'ListItem',position:2,name:data.district,item:new URL(districtHref,Astro.site??Astro.url).href},
+{'@type':'ListItem',position:3,name:data.name,item:new URL(Astro.url.pathname,Astro.site??Astro.url).href}
 ]};
 const faqJson={'@context':'https://schema.org','@type':'FAQPage',mainEntity:[
 ...pageFaq.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}})),
