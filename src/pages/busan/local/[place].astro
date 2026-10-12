@@ -280,7 +280,7 @@ const faqType=businessTerms.some(term=>focusText.includes(term))
     ? 'commercial'
     : 'home';
 const intentLabel=faqType==='commercial'?'상가·매장 집기 정리':faqType==='business'?'사업장·창고 대량 정리':'가구·이사 정리';
-const metaDescription=`${data.name} 폐기물수거 ${intentLabel} 상담. ${profile.lead}`;
+const metaDescription=`부산 ${data.district} ${data.name} 폐기물수거 상담. ${profile.lead} ${profile.point}`.slice(0,160);
 const pageScenarios=scenarios[data.slug];
 const pageFaq=faqProfiles[faqType];
 const ctaProfiles={
