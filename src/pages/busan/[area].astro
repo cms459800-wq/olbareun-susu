@@ -84,7 +84,7 @@ const districtFaq={'@context':'https://schema.org','@type':'FAQPage',mainEntity:
 {'@type':'Question',name:'사진 상담에는 무엇을 보내면 좋나요?',acceptedAnswer:{'@type':'Answer',text:guide.service}}
 ]};
 ---
-<Layout title={area+' 폐기물수거 | '+data.focus+' | 올바른수거'} description={'부산 '+area+' 폐기물수거 상담. '+intro}>
+<Layout title={'부산'+area+'폐기물수거 | '+data.focus+' 수거·정리 상담 - 올바른수거'} description={'부산 '+area+' 폐기물수거·불용품수거 상담. '+intro+' 주요 수거 품목은 '+types.join('·')+' 등이며, 물품 사진과 수량·층수·차량 접근 조건을 보내주시면 수거 가능 여부와 견적을 안내합니다.'}>
 <header class="local-header"><a class="brand" href="/" aria-label="올바른수거 홈"><img class="brand-logo" src="/images/logo.png" alt="올바른수거" width="320" height="100" /></a><a href="/" class="back">← 부산 전체지역</a><a class="header-call" href="tel:01066484886">☎ 010-6648-4886</a></header>
 <main>
 <section class="area-hero district-hero"><div><p class="district-kicker">BUSAN · {area} COLLECTION GUIDE</p><h1>{area} 폐기물수거<br><em>{data.focus}</em></h1><p>{intro}</p><div class="district-facts"><span>사진으로 물품 확인</span><span>현장 이동조건 확인</span><span>{area} 지역별 안내</span></div><div class="actions"><a class="primary" href="http://qr.kakao.com/talk/xiB5oLU91AZmWwLV9g5AwwM4O5I-" target="_blank" rel="noopener noreferrer">사진으로 수거 상담</a><a class="secondary" href="tel:01066484886">☎ 전화 상담</a></div></div><div class="hero-chat district-chat" aria-label="올바른수거 사진 상담 예시">
