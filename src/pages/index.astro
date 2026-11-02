@@ -124,7 +124,8 @@ const menuBtn=document.querySelector('.menu');
 const menuPanel=document.querySelector('.mobile-menu');
 const menuClose=document.querySelector('.menu-close');
 const menuDim=document.querySelector('.menu-dim');
-const setMenu=(open)=>{menuPanel?.classList.toggle('open',open);menuDim?.classList.toggle('open',open);document.body.classList.toggle('menu-open',open);menuPanel?.setAttribute('aria-hidden',String(!open));menuBtn?.setAttribute('aria-expanded',String(open));};
+const setMenu=(open)=>{menuPanel?.classList.toggle('open',open);menuDim?.classList.toggle('open',open);document.body.classList.toggle('menu-open',open);menuPanel?.setAttribute('aria-hidden',String(!open));menuBtn?.setAttribute('aria-expanded',String(open));if('inert' in menuPanel)menuPanel.inert=!open;if(open)menuClose?.focus();else if(menuPanel?.contains(document.activeElement))menuBtn?.focus();};
+if(menuPanel){menuPanel.inert=true;}
 menuBtn?.addEventListener('click',()=>setMenu(true));
 menuClose?.addEventListener('click',()=>setMenu(false));
 menuDim?.addEventListener('click',()=>setMenu(false));
