@@ -364,3 +364,11 @@ a,button{-webkit-tap-highlight-color:transparent}
 @media(max-width:430px){
  .area-case-card{flex-basis:56%}
 }
+
+/* Reserve space for the district/neighborhood fixed consultation bar. */
+@media(max-width:800px){
+  body:has(.district-mobile-actions){padding-bottom:calc(112px + env(safe-area-inset-bottom))}
+  .district-mobile-actions{display:grid;position:fixed;top:auto;flex-direction:row;align-items:stretch}
+  .district-mobile-actions a{white-space:nowrap}
+}
+@media(max-width:360px){.district-mobile-actions a{font-size:13px}}
